@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070708;
+  --surface: #0d0d0f;
+  --surface-2: #131316;
+  --foreground: #f4f4f5;
+  --muted: #9d9da6;
+  --faint: #5d5d66;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.14);
+  --accent: #c8b69b;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", sans-serif;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip; /* floating hero phones may extend past the container */
+}
+
+::selection {
+  background: rgba(200, 182, 155, 0.25);
+}
+
+/* Serif italic accent — for single emphasized words inside headlines */
+.serif-accent {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Hairline ring used across cards */
+.ring-hairline {
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+
+/* Subtle animated gradient text */
+.gradient-text {
+  background: linear-gradient(
+    110deg,
+    #f4f4f5 0%,
+    #c8b69b 28%,
+    #f4f4f5 55%,
+    #9d9da6 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 9s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-pan {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+/* Grain overlay for depth — barely perceptible */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hide scrollbar on horizontal scrollers but keep function */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Stack marquee ── */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll linear infinite;
+}
+
+.marquee-track-reverse {
+  animation: marquee-scroll linear infinite reverse;
+}
+
+.marquee-row:hover .marquee-track,
+.marquee-row:hover .marquee-track-reverse {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none;
+  }
+}
+
+/* ── Light theme ── */
+html.light {
+  --background: #f6f5f2;
+  --surface: #ffffff;
+  --surface-2: #edecea;
+  --foreground: #161618;
+  --muted: #585860;
+  --faint: #8a8a92;
+  --hairline: rgba(0, 0, 0, 0.08);
+  --hairline-strong: rgba(0, 0, 0, 0.15);
+  --accent: #8a7355;
+}
+
+html.light .gradient-text {
+  background: linear-gradient(
+    110deg,
+    #161618 0%,
+    #8a7355 28%,
+    #161618 55%,
+    #585860 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html.light ::selection {
+  background: rgba(138, 115, 85, 0.22);
+}
+
+html.light .grain::after {
+  opacity: 0.05;
+}
+
+/* white-on-dark brand SVGs need inverting on light */
+html.light img[src*="apple.svg"],
+html.light img[src*="openai.svg"],
+html.light img[src*="nextdotjs.svg"],
+html.light img[src*="vercel.svg"],
+html.light img[src*="github.svg"],
+html.light img[src*="plaid.svg"] {
+  filter: invert(1);
+}
+
+/* availability badge */
+.badge-available {
+  border-color: rgba(52, 211, 153, 0.25);
+  background: rgba(52, 211, 153, 0.07);
+  color: #6ee7b7;
+}
+html.light .badge-available {
+  border-color: rgba(4, 120, 87, 0.25);
+  background: rgba(16, 185, 129, 0.08);
+  color: #047857;
+}
+
+/* tab bar surface */
+.tabbar-surface {
+  background: rgba(18, 18, 21, 0.72);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+html.light .tabbar-surface {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* ── Xcode showcase theme (dark = Xcode Dark, light = Xcode Light) ── */
+:root {
+  --xc-bg: #1d1d22;
+  --xc-chrome: #26262c;
+  --xc-canvas: #161619;
+  --xc-border: rgba(255, 255, 255, 0.06);
+  --xc-text: rgba(232, 232, 237, 0.9);
+  --xc-linenum: rgba(255, 255, 255, 0.2);
+  --xc-title: rgba(255, 255, 255, 0.35);
+  --xc-tab-active-bg: rgba(255, 255, 255, 0.09);
+  --xc-tab-active-text: rgba(255, 255, 255, 0.9);
+  --xc-tab-text: rgba(255, 255, 255, 0.4);
+  --xc-kw: #fc5fa3;
+  --xc-type: #5dd8ff;
+  --xc-str: #fc6a5d;
+  --xc-num: #d0bf69;
+  --xc-comment: #6c7986;
+  --xc-mod: #a167e6;
+}
+
+html.light {
+  --xc-bg: #ffffff;
+  --xc-chrome: #ececec;
+  --xc-canvas: #f4f4f6;
+  --xc-border: rgba(0, 0, 0, 0.09);
+  --xc-text: rgba(22, 22, 24, 0.92);
+  --xc-linenum: rgba(0, 0, 0, 0.25);
+  --xc-title: rgba(0, 0, 0, 0.4);
+  --xc-tab-active-bg: rgba(0, 0, 0, 0.07);
+  --xc-tab-active-text: rgba(0, 0, 0, 0.85);
+  --xc-tab-text: rgba(0, 0, 0, 0.45);
+  --xc-kw: #ad3da4;
+  --xc-type: #0b4f79;
+  --xc-str: #d12f1b;
+  --xc-num: #272ad8;
+  --xc-comment: #5d6c79;
+  --xc-mod: #703daa;
+}
+
+/* ── Lenis smooth scroll ── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
