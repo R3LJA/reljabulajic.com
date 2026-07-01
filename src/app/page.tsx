@@ -115,6 +115,39 @@ const testimonials = [
   },
 ];
 
+const aiCapabilities = [
+  {
+    title: "Multi-model orchestration",
+    body: "Load-balancing across Claude, GPT and Gemini with cost-tiered routing — 4o for depth, 4o-mini for scale.",
+    proof: ["LaunchPilot", "Gut"],
+  },
+  {
+    title: "Agent pipelines",
+    body: "Background research and reasoning agents running on a custom FastAPI backend, not a single prompt.",
+    proof: ["DeepLead", "Trace"],
+  },
+  {
+    title: "Vision pipelines",
+    body: "Photo-to-structured-data: garment, food and skin analysis, plus on-device Vision OCR.",
+    proof: ["Vael", "Skyn", "Sharp"],
+  },
+  {
+    title: "Voice & language",
+    body: "On-device transcription, natural-language intent parsing and AI-graded spoken answers.",
+    proof: ["Recite", "VoiceVault"],
+  },
+  {
+    title: "On-device & private AI",
+    body: "Apple Vision, Speech and Core ML models running on-device, with edge proxies that never store user photos.",
+    proof: ["CleanSlate", "Skyn"],
+  },
+  {
+    title: "Grounded, guardrailed reasoning",
+    body: "Coaching and scoring grounded in each user's own data, backed by deterministic validation rules.",
+    proof: ["Kora", "Lab+"],
+  },
+];
+
 export default function Home() {
   return (
     <main className="mx-auto w-full max-w-6xl px-6 pb-24">
@@ -182,6 +215,63 @@ export default function Home() {
               screenshot={getScreenshots(app.slug)[0]}
               index={i}
             />
+          ))}
+        </div>
+      </section>
+
+      {/* ───────── AI Engineering ───────── */}
+      <section className="mt-32">
+        <Reveal>
+          <div className="mb-12 max-w-2xl">
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
+              AI Engineering
+            </p>
+            <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+              Production AI,{" "}
+              <span className="serif-accent gradient-text">engineered</span> —
+              not just prompted.
+            </h2>
+            <p className="mt-5 text-muted">
+              I ship AI as real product infrastructure: multi-model systems,
+              agent pipelines, and vision and voice features — all grounded in
+              real user data and tuned for reliability, latency and cost.
+            </p>
+          </div>
+        </Reveal>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {aiCapabilities.map((c, i) => (
+            <Reveal key={c.title} delay={(i % 3) * 0.08}>
+              <div className="group relative h-full overflow-hidden rounded-3xl border border-hairline bg-surface p-6 transition-colors hover:border-hairline-strong">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(70% 60% at 20% 0%, rgba(200,182,155,0.10) 0%, transparent 70%)",
+                  }}
+                />
+                <h3 className="relative font-semibold tracking-tight">
+                  {c.title}
+                </h3>
+                <p className="relative mt-3 text-sm leading-relaxed text-muted">
+                  {c.body}
+                </p>
+                <div className="relative mt-4 flex flex-wrap gap-1.5">
+                  {c.proof.map((p) => (
+                    <span
+                      key={p}
+                      className="rounded-full px-2.5 py-1 text-[11px] font-medium text-accent"
+                      style={{
+                        background: "rgba(200,182,155,0.08)",
+                        boxShadow: "inset 0 0 0 1px var(--hairline)",
+                      }}
+                    >
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
