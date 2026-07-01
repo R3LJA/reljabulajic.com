@@ -42,6 +42,7 @@ export const stackCategories: StackCategory[] = [
       "Anthropic Claude",
       "Google Gemini",
       "Vision · Voice · Reasoning",
+      "Image generation & try-on",
       "Agent pipelines",
       "Multi-model routing",
       "Prompt & cost engineering",

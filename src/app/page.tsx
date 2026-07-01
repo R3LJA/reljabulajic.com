@@ -127,6 +127,11 @@ const aiCapabilities = [
     proof: ["DeepLead", "Trace"],
   },
   {
+    title: "Generative & image AI",
+    body: "AI image generation and photorealistic virtual try-on — creating new imagery, not just reading it.",
+    proof: ["LaunchPilot", "Vael"],
+  },
+  {
     title: "Vision pipelines",
     body: "Photo-to-structured-data: garment, food and skin analysis, plus on-device Vision OCR.",
     proof: ["Vael", "Skyn", "Sharp"],
@@ -145,6 +150,11 @@ const aiCapabilities = [
     title: "Grounded, guardrailed reasoning",
     body: "Coaching and scoring grounded in each user's own data, backed by deterministic validation rules.",
     proof: ["Kora", "Lab+"],
+  },
+  {
+    title: "Latency & cost engineering",
+    body: "Sub-three-second voice pipelines and cost-tiered model routing — AI budgeted like production infrastructure.",
+    proof: ["VoiceFlow", "Gut"],
   },
 ];
 
@@ -233,8 +243,9 @@ export default function Home() {
             </h2>
             <p className="mt-5 text-muted">
               I ship AI as real product infrastructure: multi-model systems,
-              agent pipelines, and vision and voice features — all grounded in
-              real user data and tuned for reliability, latency and cost.
+              agent pipelines, vision, voice and generative image features —
+              all grounded in real user data and tuned for reliability,
+              latency and cost.
             </p>
           </div>
         </Reveal>
