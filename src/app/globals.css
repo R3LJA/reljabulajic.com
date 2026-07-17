@@ -10,6 +10,10 @@
   --hairline: rgba(255, 255, 255, 0.08);
   --hairline-strong: rgba(255, 255, 255, 0.14);
   --accent: #c8b69b;
+  /* hero aurora blobs — tuned per theme */
+  --aurora-1: rgba(200, 182, 155, 0.13);
+  --aurora-2: rgba(125, 184, 232, 0.09);
+  --aurora-3: rgba(167, 139, 250, 0.08);
 }
 
 @theme inline {
@@ -83,6 +87,23 @@ body {
   }
 }
 
+/* gradient text locked to the dark palette — for copy sitting on media
+   that stays dark in both themes (e.g. the CTA founder-loop card) */
+.gradient-text-fixed {
+  background: linear-gradient(
+    110deg,
+    #f4f4f5 0%,
+    #c8b69b 28%,
+    #f4f4f5 55%,
+    #9d9da6 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 9s ease-in-out infinite alternate;
+}
+
 /* Grain overlay for depth — barely perceptible */
 .grain::after {
   content: "";
@@ -144,6 +165,10 @@ html.light {
   --hairline: rgba(0, 0, 0, 0.08);
   --hairline-strong: rgba(0, 0, 0, 0.15);
   --accent: #8a7355;
+  /* deeper, warmer washes — the dark-theme values vanish on cream */
+  --aurora-1: rgba(138, 115, 85, 0.2);
+  --aurora-2: rgba(59, 116, 176, 0.12);
+  --aurora-3: rgba(109, 84, 196, 0.1);
 }
 
 html.light .gradient-text {

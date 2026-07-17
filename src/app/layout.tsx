@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import FlowField from "@/components/FlowField";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import TabBar from "@/components/TabBar";
@@ -47,6 +48,7 @@ export default function RootLayout({
           }}
         />
         <SmoothScroll />
+        <FlowField />
         <div className="flex-1">{children}</div>
         <Footer />
         <TabBar />
