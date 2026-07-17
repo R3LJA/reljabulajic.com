@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useThemeMode } from "@/lib/useThemeMode";
 
 /**
- * Site-wide cursor-reactive generative flow field — particles drifting along
+ * Site-wide cursor-reactive generative flow field: particles drifting along
  * a time-varying vector field, leaving silky trails. Mounted once in the root
  * layout as a fixed layer, so it flows continuously across scrolling AND page
  * navigations. On the home page it burns at full strength in the hero and
@@ -77,7 +77,7 @@ export default function FlowField() {
   const isHomeRef = useRef(pathname === "/");
   isHomeRef.current = pathname === "/";
 
-  /* reduced motion renders a static constellation — refresh it on theme flip */
+  /* reduced motion renders a static constellation; refresh it on theme flip */
   useEffect(() => {
     redrawStaticRef.current?.();
   }, [mode]);

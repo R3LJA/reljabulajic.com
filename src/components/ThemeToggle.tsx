@@ -10,13 +10,12 @@ export default function ThemeToggle() {
     setLight(document.documentElement.classList.contains("light"));
   }, []);
 
+  /* dark is the default on every visit; the choice lives only for the
+     current session (html class persists across client-side navigation) */
   function toggle() {
     const next = !light;
     setLight(next);
     document.documentElement.classList.toggle("light", next);
-    try {
-      localStorage.setItem("theme", next ? "light" : "dark");
-    } catch {}
   }
 
   return (

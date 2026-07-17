@@ -19,7 +19,7 @@ export default function Footer() {
             <span className="font-semibold tracking-tight">Relja Bulajić</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-            Founder of Imperial Labs — full-stack & AI engineer. I design,
+            Founder of Imperial Labs, full-stack & AI engineer. I design,
             build and ship products end to end, from SwiftUI to custom
             backends.
           </p>
@@ -58,7 +58,7 @@ export default function Footer() {
         <p>
           This site is an{" "}
           <span className="serif-accent text-accent">Imperial Labs</span>{" "}
-          product — like every app in the portfolio.
+          product, like every app in the portfolio.
         </p>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Relja Bulajić — Full-Stack & AI Engineer";
+  "Relja Bulajić · Full-Stack & AI Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

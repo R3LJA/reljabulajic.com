@@ -11,7 +11,7 @@ import {
 } from "framer-motion";
 
 /**
- * Scroll-drawn "signal thread" — a thin champagne trace that draws itself
+ * Scroll-drawn "signal thread": a thin champagne trace that draws itself
  * down the home page as you scroll, winding between sections like a signal
  * traveling through a circuit: the "end to end" story at page scale. A
  * glowing pulse rides the tip and nodes light up as it passes. It sits above
@@ -26,7 +26,7 @@ import {
  */
 
 const START = [50, 0] as const;
-/* [c1x, c1y, c2x, c2y, x, y] — junctions double as node positions */
+/* [c1x, c1y, c2x, c2y, x, y]: junctions double as node positions */
 const SEGS = [
   [50, 30, 68, 45, 68, 85],
   [68, 130, 30, 150, 27, 210],
@@ -132,7 +132,7 @@ export default function SignalThread() {
   const d = dims ? buildPath(sy) : "";
   const upx = dims ? 100 / dims.w : 0; // viewBox units per screen px
 
-  /* arc-length fraction where the path crosses each node — the curve is
+  /* arc-length fraction where the path crosses each node; the curve is
      monotonic in y, so a binary search per node is exact */
   useLayoutEffect(() => {
     const el = measureRef.current;
@@ -191,7 +191,7 @@ export default function SignalThread() {
             fill="none"
             preserveAspectRatio="none"
           >
-            {/* faint ghost of the full route — the unlit trace ahead */}
+            {/* faint ghost of the full route: the unlit trace ahead */}
             <path
               ref={measureRef}
               d={d}
