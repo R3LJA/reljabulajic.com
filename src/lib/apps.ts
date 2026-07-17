@@ -23,8 +23,8 @@ export const apps: AppProject[] = [
     name: "Vael",
     tagline: "Your wardrobe, styled by AI.",
     description:
-      "Vael is a luxury-minimal wardrobe app that removes the single biggest reason people abandon closet apps: manual data entry. Photograph a garment and a Gemini vision pipeline auto-tags its type, color and material; from there the app composes daily outfits using live WeatherKit data and your calendar, and renders photorealistic try-ons of any item on your own body through the FASHN API. The whole system is mine end to end — a SwiftUI app over a Supabase Postgres backend with Edge Functions and row-level security, a Next.js marketing and web-app layer, and a Chrome extension, all sharing one data model so every surface stays in sync.",
-    role: "Founder & sole developer — product, design, iOS, Supabase backend, AI pipeline, web.",
+      "Vael is a luxury-minimal wardrobe app that removes the single biggest reason people abandon closet apps: manual data entry. Photograph a garment and a Gemini vision pipeline auto-tags its type, color and material; from there the app composes daily outfits using live WeatherKit data and your calendar, and renders photorealistic try-ons of any item on your own body through the FASHN API. The whole system is mine end to end: a SwiftUI app over a Supabase Postgres backend with Edge Functions and row-level security, a Next.js marketing and web-app layer, and a Chrome extension, all sharing one data model so every surface stays in sync.",
+    role: "Founder & sole developer: product, design, iOS, Supabase backend, AI pipeline, web.",
     stack: ["SwiftUI", "Gemini Vision", "FASHN Try-On", "Supabase + Edge Functions", "WeatherKit", "Next.js"],
     accent: "#C8B69B",
     accentSoft: "#8a7a64",
@@ -37,8 +37,8 @@ export const apps: AppProject[] = [
     name: "AirPosture",
     tagline: "Your AirPods are a posture sensor.",
     description:
-      "Most posture products ask you to buy and wear yet another gadget. AirPosture uses the motion sensors already inside AirPods Pro and Max: CoreMotion's CMHeadphoneMotionManager streams head orientation in real time, and the moment you start slouching the app nudges you back. It's a true multi-platform Apple product, not a single iPhone build — a native iPhone app, a standalone Apple Watch app with haptic nudges, a full macOS app for desk work, and Lock/Home-Screen widgets with Live Activities, all sharing state through WatchConnectivity. An AI coach reasons over your own tracking history rather than generic tips, and guided front/side photo assessments chart visible progress over weeks. The architecture is deliberately offline-first, so tracking keeps working with no connection and no privacy trade-off.",
-    role: "Founder & sole developer — iPhone, Apple Watch & macOS.",
+      "Most posture products ask you to buy and wear yet another gadget. AirPosture uses the motion sensors already inside AirPods Pro and Max: CoreMotion's CMHeadphoneMotionManager streams head orientation in real time, and the moment you start slouching the app nudges you back. It's a true multi-platform Apple product, not a single iPhone build: a native iPhone app, a standalone Apple Watch app with haptic nudges, a full macOS app for desk work, and Lock/Home-Screen widgets with Live Activities, all sharing state through WatchConnectivity. An AI coach reasons over your own tracking history rather than generic tips, and guided front/side photo assessments chart visible progress over weeks. The architecture is deliberately offline-first, so tracking keeps working with no connection and no privacy trade-off.",
+    role: "Founder & sole developer: iPhone, Apple Watch & macOS.",
     stack: ["SwiftUI", "CoreMotion", "watchOS", "macOS", "WatchConnectivity", "Live Activities", "WidgetKit"],
     metrics: ["2,000+ users", "Paying subscribers across multiple countries"],
     platforms: ["iPhone", "Apple Watch", "macOS", "Widgets"],
@@ -52,8 +52,8 @@ export const apps: AppProject[] = [
     name: "Vow",
     tagline: "An AI coach that keeps your promises with you.",
     description:
-      "Vow turns habit-building into something you can feel: a living orb at the center of the app grows brighter as you keep your vows and dims when you drift. It reaches deep into the OS — FamilyControls and ManagedSettings to actually block distracting apps, HealthKit signals for sleep and activity, streaks and reminders — while an OpenAI layer plans your week, checks in, and adapts to how you really live. I built the server side too: Firebase Auth, Firestore, Cloud Functions for the AI orchestration, FCM push, and hand-written security rules hardened with App Check.",
-    role: "Founder & sole developer — iOS app + Firebase backend (Cloud Functions, security rules).",
+      "Vow turns habit-building into something you can feel: a living orb at the center of the app grows brighter as you keep your vows and dims when you drift. It reaches deep into the OS (FamilyControls and ManagedSettings to actually block distracting apps, HealthKit signals for sleep and activity, streaks and reminders) while an OpenAI layer plans your week, checks in, and adapts to how you really live. I built the server side too: Firebase Auth, Firestore, Cloud Functions for the AI orchestration, FCM push, and hand-written security rules hardened with App Check.",
+    role: "Founder & sole developer: iOS app + Firebase backend (Cloud Functions, security rules).",
     stack: ["SwiftUI", "FamilyControls", "HealthKit", "Firebase + Cloud Functions", "OpenAI", "SwiftData"],
     accent: "#A78BFA",
     accentSoft: "#6d5aa8",
@@ -65,8 +65,8 @@ export const apps: AppProject[] = [
     name: "PayControl",
     tagline: "Family money, finally under control.",
     description:
-      "PayControl is a family budgeting and allowance platform I delivered for a client, building both halves of the product myself. The backend is a production-grade Python service: FastAPI over PostgreSQL, live Plaid bank connections for real account and transaction data, Alembic-managed migrations, structlog logging, dependency-injected services, and a pytest suite kept above 80% coverage. On top of it sits a native SwiftUI app with secure token handling and keychain storage. This is the project where fintech-grade discipline matters most — money flows, sensitive credentials, and zero room for sloppy security — and it shipped as one coherent system from a single pair of hands.",
-    role: "Client engagement — iOS app + entire Python backend (FastAPI · PostgreSQL · Plaid).",
+      "PayControl is a family budgeting and allowance platform I delivered for a client, building both halves of the product myself. The backend is a production-grade Python service: FastAPI over PostgreSQL, live Plaid bank connections for real account and transaction data, Alembic-managed migrations, structlog logging, dependency-injected services, and a pytest suite kept above 80% coverage. On top of it sits a native SwiftUI app with secure token handling and keychain storage. This is the project where fintech-grade discipline matters most (money flows, sensitive credentials, and zero room for sloppy security), and it shipped as one coherent system from a single pair of hands.",
+    role: "Client engagement: iOS app + entire Python backend (FastAPI · PostgreSQL · Plaid).",
     stack: ["SwiftUI", "FastAPI", "PostgreSQL", "Plaid", "Alembic", "pytest 80%+"],
     accent: "#6EE7B7",
     accentSoft: "#3f8a6c",
@@ -81,7 +81,7 @@ export const apps: AppProject[] = [
     tagline: "Explain it out loud. AI grades you.",
     description:
       "Recite operationalizes active recall, the study method that actually works: you explain a topic out loud, on-device speech turns it into text, and an AI grader scores your answer and surfaces exactly what you forgot. The Screen Time API shields distracting apps while a session is running, so focus is enforced, not just suggested. Behind it is a Supabase Postgres backend with row-level security and a grading pipeline I designed myself. It's live on the App Store with paying subscribers and a download-to-paid conversion several times the indie average.",
-    role: "Founder & sole developer — iOS app + Supabase backend.",
+    role: "Founder & sole developer: iOS app + Supabase backend.",
     stack: ["SwiftUI", "Speech", "Screen Time API", "Supabase + RLS", "AI Grading"],
     accent: "#F4A261",
     accentSoft: "#a86f3e",
@@ -94,8 +94,8 @@ export const apps: AppProject[] = [
     name: "Trace",
     tagline: "AI people search, in one conversation.",
     description:
-      "Trace looks like a single calm chat screen — no tabs, no menus — but that minimal surface is the visible 20% of the product. The other 80% is a custom Python backend I built from scratch: a FastAPI service that orchestrates Claude for the actual people-search reasoning, authenticates through Firebase Admin, and generates polished PDF reports server-side with WeasyPrint and Jinja2 templates. The result helps people verify dating matches, marketplace sellers, job candidates and their own digital footprint, all through plain conversation.",
-    role: "Founder & sole developer — iOS app + entire Python backend.",
+      "Trace looks like a single calm chat screen (no tabs, no menus), but that minimal surface is the visible 20% of the product. The other 80% is a custom Python backend I built from scratch: a FastAPI service that orchestrates Claude for the actual people-search reasoning, authenticates through Firebase Admin, and generates polished PDF reports server-side with WeasyPrint and Jinja2 templates. The result helps people verify dating matches, marketplace sellers, job candidates and their own digital footprint, all through plain conversation.",
+    role: "Founder & sole developer: iOS app + entire Python backend.",
     stack: ["SwiftUI", "FastAPI", "Claude AI", "Firebase Admin", "WeasyPrint PDF", "StoreKit 2"],
     accent: "#F87171",
     accentSoft: "#a84e4e",
@@ -108,8 +108,8 @@ export const apps: AppProject[] = [
     name: "Peptyx",
     tagline: "The food companion for GLP-1 users.",
     description:
-      "Peptyx serves the fastest-growing health audience in the world — people on GLP-1 medication who need to protect muscle and hit their protein while eating far less. The interaction is deliberately effortless: describe or photo-log a bite in plain language, an AI model recognizes the food and estimates macros, and the day's calorie and protein targets stay front and center alongside a medication tracker. A Firebase backend handles auth, sync and storage, and the whole experience is tuned to feel calm and clinical rather than gamified, because this audience wants reassurance, not streaks.",
-    role: "Founder & sole developer — iOS app + Firebase backend.",
+      "Peptyx serves the fastest-growing health audience in the world: people on GLP-1 medication who need to protect muscle and hit their protein while eating far less. The interaction is deliberately effortless: describe or photo-log a bite in plain language, an AI model recognizes the food and estimates macros, and the day's calorie and protein targets stay front and center alongside a medication tracker. A Firebase backend handles auth, sync and storage, and the whole experience is tuned to feel calm and clinical rather than gamified, because this audience wants reassurance, not streaks.",
+    role: "Founder & sole developer: iOS app + Firebase backend.",
     stack: ["SwiftUI", "Firebase", "AI Vision", "HealthKit", "WidgetKit"],
     accent: "#F97316",
     accentSoft: "#a8551f",
@@ -122,8 +122,8 @@ export const apps: AppProject[] = [
     name: "Gut",
     tagline: "A journal that sees relationship patterns.",
     description:
-      "Gut is a longitudinal relationship journal disguised as a simple logging app. You record moments by text or voice; an AI layer (GPT-4o for depth, 4o-mini for scale) classifies each into trust, respect, communication and effort, updates a living relationship score, and detects patterns across weeks and months. It's a genuinely deep codebase — roughly 21,000 lines of Swift across 28 services, with a predictive engine, weekly synthesis and a full widget suite — sitting on a Firebase backend (Auth, Firestore, Cloud Functions) I architected and secured myself, monetized through RevenueCat.",
-    role: "Founder & sole developer — iOS app + Firebase backend.",
+      "Gut is a longitudinal relationship journal disguised as a simple logging app. You record moments by text or voice; an AI layer (GPT-4o for depth, 4o-mini for scale) classifies each into trust, respect, communication and effort, updates a living relationship score, and detects patterns across weeks and months. It's a genuinely deep codebase (roughly 21,000 lines of Swift across 28 services, with a predictive engine, weekly synthesis and a full widget suite) sitting on a Firebase backend (Auth, Firestore, Cloud Functions) I architected and secured myself, monetized through RevenueCat.",
+    role: "Founder & sole developer: iOS app + Firebase backend.",
     stack: ["SwiftUI", "Firebase + Cloud Functions", "GPT-4o / 4o-mini", "RevenueCat", "WidgetKit"],
     accent: "#FB7185",
     accentSoft: "#a85064",
@@ -136,8 +136,8 @@ export const apps: AppProject[] = [
     name: "Lab+",
     tagline: "A second set of eyes before the experiment runs.",
     description:
-      "Lab+ is an AI-assisted experimental-design validation platform for researchers — a second set of eyes before a plan goes to a supervisor or burns through reagents. Rather than a science chatbot, it's a structured system: guided inputs become persistent experiment objects, deterministic validation rules flag missing controls and confounders, statistical-planning support estimates sample sizes and test choices, and an explicit scoring model rates the design. The iOS app sits over a Supabase Postgres backend I designed around those rules, blending hard logic with AI reasoning so the advice is auditable, not just plausible.",
-    role: "Founder & sole developer — product, iOS app + Supabase backend, AI system design.",
+      "Lab+ is an AI-assisted experimental-design validation platform for researchers: a second set of eyes before a plan goes to a supervisor or burns through reagents. Rather than a science chatbot, it's a structured system: guided inputs become persistent experiment objects, deterministic validation rules flag missing controls and confounders, statistical-planning support estimates sample sizes and test choices, and an explicit scoring model rates the design. The iOS app sits over a Supabase Postgres backend I designed around those rules, blending hard logic with AI reasoning so the advice is auditable, not just plausible.",
+    role: "Founder & sole developer: product, iOS app + Supabase backend, AI system design.",
     stack: ["SwiftUI", "Supabase", "PostgreSQL", "Validation engine", "Statistical planning"],
     accent: "#67E8F9",
     accentSoft: "#479ca8",
@@ -149,8 +149,8 @@ export const apps: AppProject[] = [
     name: "RYSE",
     tagline: "Speak it. It's a task.",
     description:
-      "RYSE is a voice-first task manager built for a client and aimed at busy parents who capture things while their hands are full. Tap, speak naturally, and an AI parser extracts a structured task — title, category, priority and due date — in under three seconds, sorting it into a Today/Tomorrow/This-Week timeline. It's privacy-first by design: audio is never stored, only the transcript is processed, and tasks persist locally via SwiftData so the app stays instant offline. Delivered end to end across defined client milestones.",
-    role: "Client engagement — full delivery across milestones.",
+      "RYSE is a voice-first task manager built for a client and aimed at busy parents who capture things while their hands are full. Tap, speak naturally, and an AI parser extracts a structured task (title, category, priority and due date) in under three seconds, sorting it into a Today/Tomorrow/This-Week timeline. It's privacy-first by design: audio is never stored, only the transcript is processed, and tasks persist locally via SwiftData so the app stays instant offline. Delivered end to end across defined client milestones.",
+    role: "Client engagement: full delivery across milestones.",
     stack: ["SwiftUI", "OpenAI", "Speech", "SwiftData"],
     accent: "#34D399",
     accentSoft: "#2e8567",
@@ -163,8 +163,8 @@ export const apps: AppProject[] = [
     name: "Plan&Rip",
     tagline: "Tear through your to-do list. Literally.",
     description:
-      "Plan&Rip is a tactile planning app I designed, built and shipped to the App Store in three weeks for a client. Tasks live as sticky notes on a wall you can drag, snap to a grid and zoom into full screen — and the signature interaction is ripping a note to complete it, driven by Core Haptics so finishing a task is physically satisfying. The engagement ran in three milestones, from focused development to TestFlight to App Store assets and submission, delivered on schedule.",
-    role: "Client engagement — design to App Store in 3 milestones.",
+      "Plan&Rip is a tactile planning app I designed, built and shipped to the App Store in three weeks for a client. Tasks live as sticky notes on a wall you can drag, snap to a grid and zoom into full screen, and the signature interaction is ripping a note to complete it, driven by Core Haptics so finishing a task is physically satisfying. The engagement ran in three milestones, from focused development to TestFlight to App Store assets and submission, delivered on schedule.",
+    role: "Client engagement: design to App Store in 3 milestones.",
     stack: ["SwiftUI", "Core Haptics", "Drag & Drop", "App Store delivery"],
     accent: "#FDBA74",
     accentSoft: "#a87a4a",
@@ -178,7 +178,7 @@ export const apps: AppProject[] = [
     name: "Held",
     tagline: "Your time, protected.",
     description:
-      "Held starts from a hard truth: every screen-time tool fails the moment willpower does — there's always an 'Ignore Limit' button. So Held is built on the system APIs that genuinely hold the line: FamilyControls, DeviceActivity and ManagedSettings power real app shields and usage monitoring that can't be casually tapped away, with an AI coach and a Firebase backend layered on top for accountability and sync. It's digital wellbeing engineered like infrastructure, not a reminder.",
+      "Held starts from a hard truth: every screen-time tool fails the moment willpower does: there's always an 'Ignore Limit' button. So Held is built on the system APIs that genuinely hold the line: FamilyControls, DeviceActivity and ManagedSettings power real app shields and usage monitoring that can't be casually tapped away, with an AI coach and a Firebase backend layered on top for accountability and sync. It's digital wellbeing engineered like infrastructure, not a reminder.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "FamilyControls", "DeviceActivity", "ManagedSettings", "Firebase", "WidgetKit"],
     accent: "#E2E8F0",
@@ -192,7 +192,7 @@ export const apps: AppProject[] = [
     name: "Kora",
     tagline: "An AI companion that knows your energy.",
     description:
-      "Kora is an AI energy coach with Apple Watch integration that goes beyond single-metric correlations. Its personal pattern engine builds multi-step causal chains across sleep, workouts, calendar load and heart data — calendar stress to poor sleep to next-day energy crash — with lag detection (does exercise help today or tomorrow?) and day-of-week profiling that learns each user individually. The result feels less like a dashboard and more like a companion that notices what you can't.",
+      "Kora is an AI energy coach with Apple Watch integration that goes beyond single-metric correlations. Its personal pattern engine builds multi-step causal chains across sleep, workouts, calendar load and heart data (calendar stress to poor sleep to next-day energy crash), with lag detection (does exercise help today or tomorrow?) and day-of-week profiling that learns each user individually. The result feels less like a dashboard and more like a companion that notices what you can't.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "HealthKit", "watchOS", "OpenAI", "Pattern engine"],
     accent: "#F4845F",
@@ -205,8 +205,8 @@ export const apps: AppProject[] = [
     name: "Skyn",
     tagline: "A personal AI dermatologist that tracks progress.",
     description:
-      "Every skin-scan app does one-time snapshots; Skyn's whole point is the trajectory. You photograph your face daily, GPT-4.1 Vision analyzes eight parameters — acne, pores, hydration, texture, pigmentation, redness, wrinkles, dark circles — and the app tracks change over weeks: 'your redness decreased 22% since you started niacinamide.' Because face photos are the most intimate data a user can give, privacy is the architecture: images live in owner-scoped Supabase storage buckets, and analysis runs through an Edge Function proxy that discards the transient request image, so raw photos never sit on a third-party server.",
-    role: "Founder & sole developer — iOS app + Supabase backend.",
+      "Every skin-scan app does one-time snapshots; Skyn's whole point is the trajectory. You photograph your face daily, GPT-4.1 Vision analyzes eight parameters (acne, pores, hydration, texture, pigmentation, redness, wrinkles, dark circles) and the app tracks change over weeks: 'your redness decreased 22% since you started niacinamide.' Because face photos are the most intimate data a user can give, privacy is the architecture: images live in owner-scoped Supabase storage buckets, and analysis runs through an Edge Function proxy that discards the transient request image, so raw photos never sit on a third-party server.",
+    role: "Founder & sole developer: iOS app + Supabase backend.",
     stack: ["SwiftUI", "GPT-4.1 Vision", "Supabase Storage", "Edge Functions", "RevenueCat"],
     accent: "#F9C5D1",
     accentSoft: "#a8848e",
@@ -218,7 +218,7 @@ export const apps: AppProject[] = [
     name: "CleanSlate",
     tagline: "Reclaim your storage, safely.",
     description:
-      "CleanSlate solves storage anxiety without making people sift through thousands of photos. An entirely on-device pipeline — Vision and PhotosUI, no server, nothing uploaded — scans the library for near-duplicates, blurry shots and forgotten screenshots, then ranks cleanup by impact and explains every recommendation before a single photo is deleted. High-impact actions first, full transparency, zero surprises.",
+      "CleanSlate solves storage anxiety without making people sift through thousands of photos. An entirely on-device pipeline (Vision and PhotosUI, no server, nothing uploaded) scans the library for near-duplicates, blurry shots and forgotten screenshots, then ranks cleanup by impact and explains every recommendation before a single photo is deleted. High-impact actions first, full transparency, zero surprises.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "PhotosUI", "Vision", "On-device ML", "WidgetKit"],
     accent: "#5EEAD4",
@@ -231,7 +231,7 @@ export const apps: AppProject[] = [
     name: "ClaimDrop",
     tagline: "Big brands owe you money.",
     description:
-      "ClaimDrop helps US consumers collect class-action settlement money they'd never have known about. It aggregates public settlement data, matches users to the ones they qualify for based on purchase history, and walks them through filing with an AI-assisted claim flow, then tracks expected payouts in an earnings dashboard. The pitch writes itself — pay a few dollars a month, recover $50–$500 you were genuinely owed — and the product is built around making that ROI obvious fast.",
+      "ClaimDrop helps US consumers collect class-action settlement money they'd never have known about. It aggregates public settlement data, matches users to the ones they qualify for based on purchase history, and walks them through filing with an AI-assisted claim flow, then tracks expected payouts in an earnings dashboard. The pitch writes itself (pay a few dollars a month, recover $50-$500 you were genuinely owed), and the product is built around making that ROI obvious fast.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "AI claim assistant", "Subscriptions", "Push notifications"],
     accent: "#FACC15",
@@ -245,7 +245,7 @@ export const apps: AppProject[] = [
     tagline: "Know if you're actually good.",
     description:
       "Sharp is an AI-powered betting tracker I built for a client, designed to tell users the truth about their own skill. It computes a 'Sharp Score' skill rating, scans physical betting slips with Vision OCR so logging is a photo instead of a form, and surfaces AI insights about real performance over time. A Firebase backend with Cloud Functions handles data, auth and the heavier processing, all wrapped in a neon dark UI with a distinctive right-side navigation.",
-    role: "Client engagement — iOS app + Firebase backend.",
+    role: "Client engagement: iOS app + Firebase backend.",
     stack: ["SwiftUI", "Vision OCR", "Firebase + Cloud Functions", "AI insights"],
     accent: "#22D3EE",
     accentSoft: "#1c8da0",
@@ -258,7 +258,7 @@ export const apps: AppProject[] = [
     name: "BrainRot GO",
     tagline: "Pokémon GO for internet culture.",
     description:
-      "BrainRot GO is a location-based collector game that turns a cultural moment into play: walk your city, and using CoreLocation and MapKit you 'find' viral brain-rot characters across five rarity tiers, build a collection, unlock achievements and level up your profile. Monetization runs on a luck-boost system through StoreKit 2, and the game is engineered to be its own marketing — players naturally make clips of their finds. A bet on timing and UGC virality in a category with no real competition.",
+      "BrainRot GO is a location-based collector game that turns a cultural moment into play: walk your city, and using CoreLocation and MapKit you 'find' viral brain-rot characters across five rarity tiers, build a collection, unlock achievements and level up your profile. Monetization runs on a luck-boost system through StoreKit 2, and the game is engineered to be its own marketing: players naturally make clips of their finds. A bet on timing and UGC virality in a category with no real competition.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "CoreLocation", "MapKit", "StoreKit 2", "Gamification"],
     accent: "#A3E635",
@@ -273,7 +273,7 @@ export const apps: AppProject[] = [
     tagline: "Stocks, crypto & markets, in one glance.",
     description:
       "StockIn is a markets companion I built for a client for people who want a calm overview, not a trading terminal. It pulls live stock, crypto and market data through third-party financial APIs and renders it with Swift Charts into clean, glanceable watchlists and movers, with subscriptions handled through StoreKit 2. The brief was clarity over noise, and the app is tuned to answer 'how are my things doing?' in a single look.",
-    role: "Client engagement — iOS app + market-data integration.",
+    role: "Client engagement: iOS app + market-data integration.",
     stack: ["SwiftUI", "Market data APIs", "Swift Charts", "StoreKit 2"],
     accent: "#4ADE80",
     accentSoft: "#359659",
@@ -287,7 +287,7 @@ export const apps: AppProject[] = [
     tagline: "Budgeting that stays out of your way.",
     description:
       "Evenflow is a personal budgeting and expense tracker built for a client, with a single guiding principle: flow over friction. Capturing an expense takes seconds, monthly overviews stay clear and uncluttered, and Swift Charts visualizations make it obvious where the money actually goes. Data persists locally via SwiftData for instant, offline-first performance, with widgets surfacing the numbers that matter without opening the app.",
-    role: "Client engagement — iOS app.",
+    role: "Client engagement: iOS app.",
     stack: ["SwiftUI", "SwiftData", "Swift Charts", "WidgetKit"],
     accent: "#2DD4BF",
     accentSoft: "#218f82",
@@ -301,7 +301,7 @@ export const apps: AppProject[] = [
     name: "WalletZen",
     tagline: "Your money, run like a command center.",
     description:
-      "WalletZen reframes personal finance as a control room rather than a spreadsheet. A single command-center dashboard surfaces balance, monthly spend and spending velocity at a glance, runs pattern analysis to flag where money is leaking, and turns the core actions — log income, log an expense, set reminders, track goals — into one-tap quick commands. Smart actions nudge the user toward better habits, and a clean budget-progress view keeps the month's target always in sight.",
+      "WalletZen reframes personal finance as a control room rather than a spreadsheet. A single command-center dashboard surfaces balance, monthly spend and spending velocity at a glance, runs pattern analysis to flag where money is leaking, and turns the core actions (log income, log an expense, set reminders, track goals) into one-tap quick commands. Smart actions nudge the user toward better habits, and a clean budget-progress view keeps the month's target always in sight.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "SwiftData", "Swift Charts", "Spending analysis", "WidgetKit"],
     accent: "#A78BFA",
@@ -314,8 +314,8 @@ export const apps: AppProject[] = [
     name: "Vira",
     tagline: "Know how your video performs, before you post.",
     description:
-      "Vira is an AI video-analysis app I delivered for a client. A creator uploads a clip and gets back structured analysis — scores, specific feedback and concrete improvement tips — so they can fix a video before it goes out, not after it flops. It's backed by a Supabase stack handling auth, upload, analysis history and a clean StoreKit subscription flow, architected with the same separation of concerns (repositories, services, view models) I bring to my own products.",
-    role: "Client engagement — iOS app + Supabase backend.",
+      "Vira is an AI video-analysis app I delivered for a client. A creator uploads a clip and gets back structured analysis (scores, specific feedback and concrete improvement tips) so they can fix a video before it goes out, not after it flops. It's backed by a Supabase stack handling auth, upload, analysis history and a clean StoreKit subscription flow, architected with the same separation of concerns (repositories, services, view models) I bring to my own products.",
+    role: "Client engagement: iOS app + Supabase backend.",
     stack: ["SwiftUI", "AI video analysis", "Supabase", "StoreKit 2"],
     accent: "#C084FC",
     accentSoft: "#8159a8",
@@ -328,7 +328,7 @@ export const apps: AppProject[] = [
     name: "VoiceFlow",
     tagline: "From voice to action in under three seconds.",
     description:
-      "VoiceFlow is a voice-command productivity tool engineered around a strict latency budget, because for voice, speed is the feature. Every stage is measured and optimized: on-device transcription under 1.5 seconds, intent parsing under 300 milliseconds, action execution under 200 — voice in, action done, in under three seconds total. A study in performance engineering and on-device ML as much as a product.",
+      "VoiceFlow is a voice-command productivity tool engineered around a strict latency budget, because for voice, speed is the feature. Every stage is measured and optimized: on-device transcription under 1.5 seconds, intent parsing under 300 milliseconds, action execution under 200: voice in, action done, in under three seconds total. A study in performance engineering and on-device ML as much as a product.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "Speech", "On-device ML", "Intent parsing"],
     accent: "#60A5FA",
@@ -342,7 +342,7 @@ export const apps: AppProject[] = [
     name: "Spar Time",
     tagline: "A boxing timer that earns its corner.",
     description:
-      "Spar Time is a focused round timer for boxing and combat sports — configurable rounds, rest periods and clear audio cues you can follow without looking at the screen. It was one of my first App Store releases, and the one that taught me the lesson the rest of this portfolio is built on: shipping a real, focused thing beats polishing forever.",
+      "Spar Time is a focused round timer for boxing and combat sports: configurable rounds, rest periods and clear audio cues you can follow without looking at the screen. It was one of my first App Store releases, and the one that taught me the lesson the rest of this portfolio is built on: shipping a real, focused thing beats polishing forever.",
     role: "Founder & sole developer.",
     stack: ["SwiftUI", "AVFoundation", "Timers"],
     accent: "#EF4444",
@@ -355,8 +355,8 @@ export const apps: AppProject[] = [
     name: "DispatcherPro",
     tagline: "Real-time fleet control, built and sold to a dispatching company.",
     description:
-      "DispatcherPro is a real-time operations web app I built and then sold to a dispatching company. Dispatchers get a live driver dashboard with color-coded status tracking and delivery management, plus an OpenWeather integration that anticipates weather-related delays before they cost money. It's a React front end over a Firebase realtime backend, so every status change propagates instantly across all connected dispatchers — and it's a product I took all the way from idea to a paying business buyer.",
-    role: "Built and sold to a dispatching company — full web app + realtime backend.",
+      "DispatcherPro is a real-time operations web app I built and then sold to a dispatching company. Dispatchers get a live driver dashboard with color-coded status tracking and delivery management, plus an OpenWeather integration that anticipates weather-related delays before they cost money. It's a React front end over a Firebase realtime backend, so every status change propagates instantly across all connected dispatchers, and it's a product I took all the way from idea to a paying business buyer.",
+    role: "Built and sold to a dispatching company: full web app + realtime backend.",
     stack: ["React", "Firebase Realtime", "OpenWeather API", "Realtime sync"],
     accent: "#38BDF8",
     accentSoft: "#2a85a8",
@@ -369,8 +369,8 @@ export const apps: AppProject[] = [
     name: "DeepLead",
     tagline: "Chat-first sales intelligence, driven by agents.",
     description:
-      "DeepLead is an agent-driven sales-intelligence platform with a chat-first interface: instead of clicking through a CRM, you talk to it, and an agent pipeline researches leads in the background while you do. It's built on Next.js 16 and TypeScript with a responsive dashboard shell over a Supabase Postgres schema with proper migrations — full-stack web engineering held to the same architectural standard as my iOS work.",
-    role: "Founder & sole developer — full-stack web platform.",
+      "DeepLead is an agent-driven sales-intelligence platform with a chat-first interface: instead of clicking through a CRM, you talk to it, and an agent pipeline researches leads in the background while you do. It's built on Next.js 16 and TypeScript with a responsive dashboard shell over a Supabase Postgres schema with proper migrations: full-stack web engineering held to the same architectural standard as my iOS work.",
+    role: "Founder & sole developer: full-stack web platform.",
     stack: ["Next.js 16", "TypeScript", "Supabase", "Tailwind", "AI agents"],
     accent: "#818CF8",
     accentSoft: "#5a62a8",
@@ -382,7 +382,7 @@ export const apps: AppProject[] = [
     name: "reljabulajic.com",
     tagline: "The site you are looking at right now.",
     description:
-      "This portfolio is itself a piece of the portfolio. Next.js 16 with TypeScript and Tailwind, hand-built CSS iPhone and browser mockups, scroll-driven Framer Motion animations, Lenis smooth scrolling, a full dark/light theme system mirroring Xcode's own appearances, an iOS-style floating tab bar and a live Xcode-canvas showcase. Designed and built from scratch — because the most honest proof of web craft is the page you're reading.",
+      "This portfolio is itself a piece of the portfolio. Next.js 16 with TypeScript and Tailwind, hand-built CSS iPhone and browser mockups, scroll-driven Framer Motion animations, Lenis smooth scrolling, a full dark/light theme system mirroring Xcode's own appearances, an iOS-style floating tab bar and a live Xcode-canvas showcase. Designed and built from scratch, because the most honest proof of web craft is the page you're reading.",
     role: "Designed & built from scratch.",
     stack: ["Next.js 16", "TypeScript", "Tailwind", "Framer Motion", "Lenis", "Vercel"],
     accent: "#A5B4FC",
@@ -395,8 +395,8 @@ export const apps: AppProject[] = [
     name: "Vael Web",
     tagline: "One backend, every surface.",
     description:
-      "Vael Web proves a point about how I architect products: it runs on the exact same Supabase backend as the Vael iOS app — shared auth, journal, and the friend closet-swap share flows — so there's one data model and zero drift between platforms. It includes an admin dashboard and API routes, a premium marketing site animated with GSAP ScrollTrigger and Lenis, and a Chrome extension that captures garments from any website straight into your wardrobe. iOS, web and browser, all in sync.",
-    role: "Founder & sole developer — web app + extension on a shared production backend.",
+      "Vael Web proves a point about how I architect products: it runs on the exact same Supabase backend as the Vael iOS app (shared auth, journal, and the friend closet-swap share flows), so there's one data model and zero drift between platforms. It includes an admin dashboard and API routes, a premium marketing site animated with GSAP ScrollTrigger and Lenis, and a Chrome extension that captures garments from any website straight into your wardrobe. iOS, web and browser, all in sync.",
+    role: "Founder & sole developer: web app + extension on a shared production backend.",
     stack: ["Next.js", "TypeScript", "Supabase SSR", "GSAP + Lenis", "Chrome Extension", "Sentry"],
     accent: "#D4C4A8",
     accentSoft: "#8a7a64",
@@ -408,8 +408,8 @@ export const apps: AppProject[] = [
     name: "LaunchPilot",
     tagline: "A marketing team that learns your voice.",
     description:
-      "LaunchPilot is an AI marketing autopilot for solo founders, and my most ambitious pure-web build. It drafts platform-tailored posts, then learns from every approval, rejection and edit to converge on your brand voice over time. Under the hood it runs a multi-model AI router that load-balances across Claude, GPT and Gemini, ffmpeg-powered video analysis, AI image generation, Stripe billing and a Supabase data layer — a genuine production AI system, not a wrapper.",
-    role: "Founder & sole developer — full-stack AI platform.",
+      "LaunchPilot is an AI marketing autopilot for solo founders, and my most ambitious pure-web build. It drafts platform-tailored posts, then learns from every approval, rejection and edit to converge on your brand voice over time. Under the hood it runs a multi-model AI router that load-balances across Claude, GPT and Gemini, ffmpeg-powered video analysis, AI image generation, Stripe billing and a Supabase data layer: a genuine production AI system, not a wrapper.",
+    role: "Founder & sole developer: full-stack AI platform.",
     stack: ["Next.js", "TypeScript", "Claude · GPT · Gemini", "Supabase", "Stripe", "ffmpeg"],
     accent: "#FB923C",
     accentSoft: "#a8642e",
@@ -421,8 +421,8 @@ export const apps: AppProject[] = [
     name: "VoiceVault",
     tagline: "Your voice is the entire interface.",
     description:
-      "VoiceVault is an intelligent voice-note system built voice-first from the ground up — my deepest voice-engineering work on any platform. It understands over 100 command intents, supports voice-driven navigation and real-time transcription, and uses natural-language parsing to turn 'remind me to call mom tomorrow at 5' into a scheduled reminder automatically. It ships as an installable, offline-capable PWA with OpenAI speech intelligence, a Supabase data layer, fuzzy search and a proactive assistant that suggests before you ask.",
-    role: "Founder & sole developer — full-stack voice platform.",
+      "VoiceVault is an intelligent voice-note system built voice-first from the ground up: my deepest voice-engineering work on any platform. It understands over 100 command intents, supports voice-driven navigation and real-time transcription, and uses natural-language parsing to turn 'remind me to call mom tomorrow at 5' into a scheduled reminder automatically. It ships as an installable, offline-capable PWA with OpenAI speech intelligence, a Supabase data layer, fuzzy search and a proactive assistant that suggests before you ask.",
+    role: "Founder & sole developer: full-stack voice platform.",
     stack: ["Next.js PWA", "TypeScript", "OpenAI · Whisper", "Supabase", "Offline / IndexedDB", "Voice NLU"],
     accent: "#E879F9",
     accentSoft: "#9c54a8",

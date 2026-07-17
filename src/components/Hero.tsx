@@ -169,7 +169,7 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.75 }}
         className="relative z-10 mt-7 max-w-xl text-pretty text-base text-muted sm:text-lg"
       >
-        12 of my own apps live on the App Store with 4,000+ users — and clients
+        12 of my own apps live on the App Store with 4,000+ users, and clients
         get the same founder-level ownership: production AI, custom Python
         backends and polished native front ends.
       </motion.p>

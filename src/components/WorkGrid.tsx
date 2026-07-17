@@ -43,7 +43,7 @@ export default function WorkGrid({
     <div>
       {/* filters */}
       <div className="mb-12 flex flex-wrap items-center gap-x-8 gap-y-4">
-        {/* platform — primary segmented control */}
+        {/* platform: primary segmented control */}
         <div className="inline-flex items-center gap-1 rounded-full border border-hairline bg-surface p-1.5">
           {platformFilters.map((f) => {
             const active = platform === f.key;
@@ -82,7 +82,7 @@ export default function WorkGrid({
           })}
         </div>
 
-        {/* origin — secondary, lighter pills */}
+        {/* origin: secondary, lighter pills */}
         <div className="inline-flex items-center gap-1.5">
           {originFilters.map((f) => {
             const active = origin === f.key;

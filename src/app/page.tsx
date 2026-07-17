@@ -119,7 +119,7 @@ const testimonials = [
 const aiCapabilities = [
   {
     title: "Multi-model orchestration",
-    body: "Load-balancing across Claude, GPT and Gemini with cost-tiered routing — 4o for depth, 4o-mini for scale.",
+    body: "Load-balancing across Claude, GPT and Gemini with cost-tiered routing: 4o for depth, 4o-mini for scale.",
     proof: ["LaunchPilot", "Gut"],
   },
   {
@@ -129,7 +129,7 @@ const aiCapabilities = [
   },
   {
     title: "Generative & image AI",
-    body: "AI image generation and photorealistic virtual try-on — creating new imagery, not just reading it.",
+    body: "AI image generation and photorealistic virtual try-on: creating new imagery, not just reading it.",
     proof: ["LaunchPilot", "Vael"],
   },
   {
@@ -154,7 +154,7 @@ const aiCapabilities = [
   },
   {
     title: "Latency & cost engineering",
-    body: "Sub-three-second voice pipelines and cost-tiered model routing — AI budgeted like production infrastructure.",
+    body: "Sub-three-second voice pipelines and cost-tiered model routing: AI budgeted like production infrastructure.",
     proof: ["VoiceFlow", "Gut"],
   },
 ];
@@ -222,12 +222,12 @@ export default function Home() {
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
               Production AI,{" "}
-              <span className="serif-accent gradient-text">engineered</span> —
+              <span className="serif-accent gradient-text">engineered</span>,
               not just prompted.
             </h2>
             <p className="mt-5 text-muted">
               I ship AI as real product infrastructure: multi-model systems,
-              agent pipelines, vision, voice and generative image features —
+              agent pipelines, vision, voice and generative image features,
               all grounded in real user data and tuned for reliability,
               latency and cost.
             </p>
@@ -417,10 +417,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───────── CTA — always-dark "midnight" card with founder loop ───────── */}
+      {/* ───────── CTA: always-dark "midnight" card with founder loop ───────── */}
       <Reveal>
         <section className="group relative mt-32 overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0b0b0d] px-8 py-20 text-center">
-          {/* ambient founder loop — leans in slightly on hover */}
+          {/* ambient founder loop, leans in slightly on hover */}
           <video
             aria-hidden
             className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-55 transition-opacity duration-700 group-hover:opacity-80 motion-reduce:hidden"
