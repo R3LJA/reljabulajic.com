@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
+import SignalThread from "@/components/SignalThread";
 import StackMarquee from "@/components/StackMarquee";
 import Reveal from "@/components/Reveal";
 import XcodeShowcase, { type ShowcaseApp } from "@/components/XcodeShowcase";
@@ -162,28 +163,11 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-6xl px-6 pb-24">
       {/* ───────── Hero ───────── */}
-      <Hero
-        phones={[
-          {
-            srcLight: "/apps/vael/hero-light.png",
-            srcDark: "/apps/vael/hero-dark.png",
-            label: "Vael",
-            accent: "#C8B69B",
-          },
-          {
-            srcLight: "/apps/airposture/hero-light.png",
-            srcDark: "/apps/airposture/hero-dark.png",
-            label: "AirPosture",
-            accent: "#7DB8E8",
-          },
-          {
-            srcLight: "/apps/vow/hero-light.png",
-            srcDark: "/apps/vow/hero-dark.png",
-            label: "Vow",
-            accent: "#A78BFA",
-          },
-        ]}
-      />
+      <Hero />
+
+      {/* everything below the hero shares one canvas for the signal thread */}
+      <div className="relative">
+      <SignalThread />
 
       {/* ───────── Proof bar ───────── */}
       <Reveal>
@@ -433,9 +417,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ───────── CTA ───────── */}
+      {/* ───────── CTA — always-dark "midnight" card with founder loop ───────── */}
       <Reveal>
-        <section className="relative mt-32 overflow-hidden rounded-[2.5rem] border border-hairline bg-surface px-8 py-20 text-center">
+        <section className="group relative mt-32 overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0b0b0d] px-8 py-20 text-center">
+          {/* ambient founder loop — leans in slightly on hover */}
+          <video
+            aria-hidden
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-55 transition-opacity duration-700 group-hover:opacity-80 motion-reduce:hidden"
+            style={{ objectPosition: "50% 42%" }}
+            src="/videos/founder-loop.mp4"
+            poster="/videos/founder-loop.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+          {/* readability scrim pooling behind the copy */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(58% 75% at 50% 46%, rgba(7,7,8,0.78) 0%, rgba(7,7,8,0.42) 58%, rgba(7,7,8,0.12) 100%)",
+            }}
+          />
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0"
@@ -444,11 +450,11 @@ export default function Home() {
                 "radial-gradient(60% 80% at 50% 110%, rgba(200,182,155,0.13) 0%, transparent 70%)",
             }}
           />
-          <h2 className="relative text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
+          <h2 className="relative text-balance text-3xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
             Built to{" "}
-            <span className="serif-accent gradient-text">ship</span>.
+            <span className="serif-accent gradient-text-fixed">ship</span>.
           </h2>
-          <p className="relative mx-auto mt-5 max-w-md text-muted">
+          <p className="relative mx-auto mt-5 max-w-md text-zinc-300/90">
             When I'm not building for clients, I'm building my own startups.
             Every project gets that same founder energy: design, code, App
             Store, owned end to end.
@@ -456,13 +462,14 @@ export default function Home() {
           <div className="relative mt-9">
             <Link
               href="/work"
-              className="inline-block rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.03]"
+              className="inline-block rounded-full bg-zinc-50 px-8 py-3.5 text-sm font-medium text-zinc-900 transition-transform duration-300 hover:scale-[1.03]"
             >
               Explore the work
             </Link>
           </div>
         </section>
       </Reveal>
+      </div>
     </main>
   );
 }

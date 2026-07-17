@@ -2,40 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  useScroll,
-} from "framer-motion";
-import DeviceFrame from "@/components/DeviceFrame";
+import { motion } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
-import { useThemeMode } from "@/lib/useThemeMode";
-
-type FloatingPhone = {
-  /** shown when the site is in LIGHT theme (opposite, for contrast) */
-  srcDark?: string;
-  /** shown when the site is in DARK theme (opposite, for contrast) */
-  srcLight?: string;
-  label: string;
-  accent: string;
-};
 
 /* word-by-word blur reveal */
 function Headline() {
   const words = [
     { text: "I" },
-    { text: "build" },
-    { text: "AI-native" },
-    { text: "apps" },
-    { text: "that" },
-    { text: "feel" },
-    { text: "like" },
-    { text: "Apple", serif: true },
-    { text: "made" },
-    { text: "them." },
+    { text: "engineer" },
+    { text: "AI" },
+    { text: "products," },
+    { text: "end to end.", serif: true },
   ];
   return (
     <h1 className="relative z-10 max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-tight sm:text-7xl">
@@ -65,7 +42,7 @@ function Headline() {
 function Aurora() {
   const blobs = [
     {
-      color: "rgba(200,182,155,0.13)",
+      color: "var(--aurora-1)",
       size: "55vw",
       x: ["-12%", "8%", "-6%"],
       y: ["-8%", "6%", "-4%"],
@@ -74,7 +51,7 @@ function Aurora() {
       top: "0%",
     },
     {
-      color: "rgba(125,184,232,0.09)",
+      color: "var(--aurora-2)",
       size: "44vw",
       x: ["10%", "-8%", "6%"],
       y: ["4%", "-10%", "6%"],
@@ -83,7 +60,7 @@ function Aurora() {
       top: "8%",
     },
     {
-      color: "rgba(167,139,250,0.08)",
+      color: "var(--aurora-3)",
       size: "40vw",
       x: ["-6%", "10%", "-8%"],
       y: ["8%", "-6%", "4%"],
@@ -95,7 +72,7 @@ function Aurora() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute left-1/2 top-0 -z-10 h-full w-screen -translate-x-1/2 overflow-hidden"
+      className="pointer-events-none absolute left-1/2 top-0 -z-20 h-full w-screen -translate-x-1/2 overflow-hidden"
     >
       {blobs.map((b, i) => (
         <motion.div
@@ -122,130 +99,10 @@ function Aurora() {
   );
 }
 
-export default function Hero({ phones }: { phones: FloatingPhone[] }) {
-  const ref = useRef<HTMLElement>(null);
-
-  /* mouse parallax */
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const smx = useSpring(mx, { stiffness: 50, damping: 18 });
-  const smy = useSpring(my, { stiffness: 50, damping: 18 });
-
-  /* scroll parallax, phones drift apart as you scroll */
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const scrollLeft = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const scrollRight = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const fade = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
-  const leftX = useTransform(smx, (v) => v * -26);
-  const leftY = useTransform(smy, (v) => v * -18);
-  const rightX = useTransform(smx, (v) => v * 34);
-  const rightY = useTransform(smy, (v) => v * 24);
-  const midX = useTransform(smx, (v) => v * -14);
-  const midY = useTransform(smy, (v) => v * 10);
-
-  function onMouseMove(e: React.MouseEvent) {
-    const r = ref.current?.getBoundingClientRect();
-    if (!r) return;
-    mx.set((e.clientX - r.left) / r.width - 0.5);
-    my.set((e.clientY - r.top) / r.height - 0.5);
-  }
-
-  const mode = useThemeMode();
-  // show the OPPOSITE theme's screenshot for contrast: dark site → light shot
-  const shot = (p: FloatingPhone) =>
-    mode === "light" ? p.srcDark ?? p.srcLight : p.srcLight ?? p.srcDark;
-
-  const [p1, p2, p3] = phones;
-
+export default function Hero() {
   return (
-    <section
-      ref={ref}
-      onMouseMove={onMouseMove}
-      className="relative flex min-h-[92svh] flex-col items-center justify-center text-center"
-    >
+    <section className="relative flex min-h-[92svh] flex-col items-center justify-center text-center">
       <Aurora />
-
-      {/* floating phones, hidden on small screens to keep the hero clean */}
-      <motion.div
-        aria-hidden
-        style={{ opacity: fade }}
-        className="pointer-events-none absolute inset-0 hidden lg:block"
-      >
-        {p1 && (
-          <motion.div
-            style={{ x: leftX, y: leftY, translateY: scrollLeft }}
-            className="absolute -left-[14%] top-[5%] w-[165px] 2xl:-left-[10%] 2xl:w-[190px]"
-          >
-            <motion.div
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              style={{ rotate: -9 }}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.1, delay: 0.9, ease: [0.21, 0.6, 0.35, 1] }}
-              >
-                <DeviceFrame src={shot(p1)} alt={p1.label} accent={p1.accent} label={p1.label} />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        )}
-        {p2 && (
-          <motion.div
-            style={{ x: rightX, y: rightY, translateY: scrollRight }}
-            className="absolute -right-[14%] top-[44%] w-[185px] 2xl:-right-[10%] 2xl:w-[215px]"
-          >
-            <motion.div
-              animate={{ y: [0, -18, 0] }}
-              transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-              style={{ rotate: 8 }}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.1, delay: 1.05, ease: [0.21, 0.6, 0.35, 1] }}
-              >
-                <DeviceFrame src={shot(p2)} alt={p2.label} accent={p2.accent} label={p2.label} />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        )}
-        {p3 && (
-          <motion.div
-            style={{ x: midX, y: midY, translateY: scrollLeft }}
-            className="absolute -left-[6%] bottom-[0%] w-[135px] 2xl:left-[1%] 2xl:w-[150px]"
-          >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              style={{ rotate: -4 }}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.1, delay: 1.2, ease: [0.21, 0.6, 0.35, 1] }}
-              >
-                <DeviceFrame src={shot(p3)} alt={p3.label} accent={p3.accent} label={p3.label} />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        )}
-      </motion.div>
-
-      {/* readability halo, fades the floating phones behind the copy */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 z-[5] hidden h-[100%] w-[78%] -translate-x-1/2 -translate-y-1/2 lg:block"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, var(--background) 38%, transparent 76%)",
-        }}
-      />
 
       {/* theme switcher */}
       <motion.div
@@ -309,18 +166,18 @@ export default function Hero({ phones }: { phones: FloatingPhone[] }) {
       <motion.p
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1.05 }}
+        transition={{ duration: 0.7, delay: 0.75 }}
         className="relative z-10 mt-7 max-w-xl text-pretty text-base text-muted sm:text-lg"
       >
-        12 of my own apps are live on the App Store with 4,000+ users, and
-        clients get that same founder-level ownership: production AI features,
-        SwiftUI front ends, custom Python backends, design and launch, end to end.
+        12 of my own apps live on the App Store with 4,000+ users — and clients
+        get the same founder-level ownership: production AI, custom Python
+        backends and polished native front ends.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1.2 }}
+        transition={{ duration: 0.7, delay: 0.9 }}
         className="relative z-10 mt-10 flex items-center gap-4"
       >
         <Link
@@ -341,7 +198,7 @@ export default function Hero({ phones }: { phones: FloatingPhone[] }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
+        transition={{ delay: 1.7 }}
         className="absolute bottom-10"
       >
         <motion.div

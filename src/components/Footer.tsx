@@ -19,8 +19,9 @@ export default function Footer() {
             <span className="font-semibold tracking-tight">Relja Bulajić</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-            Founder, full-stack & AI engineer. I design, build and ship
-            products end to end, from SwiftUI to custom backends.
+            Founder of Imperial Labs — full-stack & AI engineer. I design,
+            build and ship products end to end, from SwiftUI to custom
+            backends.
           </p>
           <p className="mt-4 flex items-center gap-2 text-xs text-faint">
             <span className="relative flex size-1.5">
@@ -53,8 +54,12 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-14 flex w-full max-w-6xl flex-col items-center justify-between gap-3 border-t border-hairline pt-8 text-xs text-faint sm:flex-row">
-        <p>© {new Date().getFullYear()} Relja Bulajić. All rights reserved.</p>
-        <p>Designed & built from scratch with Next.js.</p>
+        <p>© {new Date().getFullYear()} Imperial Labs. All rights reserved.</p>
+        <p>
+          This site is an{" "}
+          <span className="serif-accent text-accent">Imperial Labs</span>{" "}
+          product — like every app in the portfolio.
+        </p>
       </div>
     </footer>
   );
