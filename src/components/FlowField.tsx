@@ -71,16 +71,19 @@ export default function FlowField() {
 
   const mode = useThemeMode();
   const modeRef = useRef<"dark" | "light">(mode);
-  modeRef.current = mode;
 
   const pathname = usePathname();
   const isHomeRef = useRef(pathname === "/");
-  isHomeRef.current = pathname === "/";
 
   /* reduced motion renders a static constellation; refresh it on theme flip */
   useEffect(() => {
+    modeRef.current = mode;
     redrawStaticRef.current?.();
   }, [mode]);
+
+  useEffect(() => {
+    isHomeRef.current = pathname === "/";
+  }, [pathname]);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;

@@ -3,13 +3,14 @@ import Link from "next/link";
 const nav = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
+  { href: "/ai-systems", label: "AI Systems" },
   { href: "/about", label: "About" },
 ];
 
 export default function Footer() {
   return (
     <footer className="mt-10 border-t border-hairline px-6 pb-32 pt-16">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 sm:grid-cols-[2fr_1fr]">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 sm:grid-cols-[2fr_1fr_1fr]">
         {/* brand */}
         <div>
           <div className="flex items-center gap-3">
@@ -48,6 +49,34 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-[10px] font-medium uppercase tracking-[0.2em] text-faint">
+            Proof
+          </h3>
+          <ul className="mt-4 space-y-2.5">
+            <li>
+              <a
+                href="https://github.com/R3LJA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted transition-colors hover:text-accent"
+              >
+                GitHub ↗
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://apps.apple.com/md/developer/relja-bulajic/id1801518678"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted transition-colors hover:text-accent"
+              >
+                App Store ↗
+              </a>
+            </li>
           </ul>
         </div>
 
