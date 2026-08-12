@@ -455,7 +455,7 @@ export default function Home() {
             <span className="serif-accent gradient-text-fixed">ship</span>.
           </h2>
           <p className="relative mx-auto mt-5 max-w-md text-zinc-300/90">
-            When I'm not building for clients, I'm building my own startups.
+            When I&apos;m not building for clients, I&apos;m building my own startups.
             Every project gets that same founder energy: design, code, App
             Store, owned end to end.
           </p>

@@ -1,20 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useThemeMode } from "@/lib/useThemeMode";
 
 export default function ThemeToggle() {
-  const [light, setLight] = useState(false);
-
-  useEffect(() => {
-    setLight(document.documentElement.classList.contains("light"));
-  }, []);
+  const light = useThemeMode() === "light";
 
   /* dark is the default on every visit; the choice lives only for the
      current session (html class persists across client-side navigation) */
   function toggle() {
     const next = !light;
-    setLight(next);
     document.documentElement.classList.toggle("light", next);
   }
 

@@ -343,7 +343,7 @@ export default function AboutPage() {
                 repel moles from rural farmland using ground vibration, and won
                 an award for the idea at a national Arduino competition. It was
                 my first real invention: a complete hardware concept, not a
-                class assignment. I couldn't take it to production at the time
+                class assignment. I couldn&apos;t take it to production at the time
                 because the sensor hardware was beyond what a teenager could
                 fund, but the lesson stuck. Turning a real-world problem into a
                 working system is still exactly what I do, just in software now.
