@@ -21,6 +21,7 @@ The source for [reljabulajic.com](https://reljabulajic.com), my production portf
 - **Vael:** SwiftUI, Next.js and Chrome extension surfaces over a shared Supabase backend with 33 Edge Functions and 124 migrations
 - **DeepLead:** Next.js 16, Supabase and Claude Agent SDK with specialized agent workflows, evaluation gates and 40 automated tests
 - **LaunchPilot:** custom agent orchestration, multi-model routing, social integrations and scheduled Vercel jobs
+- **Paycontrol:** complete FastAPI and PostgreSQL backend with Plaid banking, encrypted tokens, transaction sync, a spending-rules engine, 50 endpoints and 36 automated tests
 - **Trace:** privacy-aware SwiftUI and FastAPI public-web research system
 - **DispatcherPro:** real-time React and Firebase operations system shipped for a US trucking client
 

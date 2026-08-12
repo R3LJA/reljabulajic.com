@@ -92,6 +92,30 @@ const systems = [
     links: [],
   },
   {
+    name: "Paycontrol",
+    eyebrow: "Deployed Python backend",
+    accent: "#FBBF24",
+    summary:
+      "A parental spending-control platform for which I designed and built the complete Python backend: banking connectivity, transaction processing, policy enforcement, reporting and production infrastructure.",
+    architecture: [
+      "50 FastAPI endpoints and 36 automated tests",
+      "PostgreSQL, SQLAlchemy and 6 Alembic migrations",
+      "Plaid sync with encrypted access tokens, retries and idempotency",
+      "Rules engine, SSE events, scheduled jobs and PDF/JSON reports",
+    ],
+    stack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Alembic",
+      "Plaid",
+      "Docker",
+      "Render",
+    ],
+    links: [],
+  },
+  {
     name: "Trace",
     eyebrow: "Privacy-aware OSINT system",
     accent: "#6EE7B7",
