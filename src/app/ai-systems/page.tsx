@@ -1,156 +1,52 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import FlagshipSystemCard from "@/components/FlagshipSystemCard";
+import { flagshipSystems } from "@/lib/aiSystems";
 
 export const metadata: Metadata = {
-  title: "AI-Native Full-Stack Engineering · Relja Bulajić",
+  title: "Production AI Systems & Agent Engineering · Relja Bulajić",
   description:
-    "Production AI systems built end to end with Next.js, Supabase, Claude, OpenAI, Vercel, SwiftUI and custom backends.",
+    "Inspect production AI systems independently architected and shipped by Relja Bulajić: agent orchestration, prompt engineering, Python backends, evaluations, voice AI and full-stack delivery.",
 };
 
 const proof = [
+  { value: "57", label: "AI modules in one production platform" },
+  { value: "18", label: "specialized agents in one system" },
+  { value: "100+", label: "voice intents designed and implemented" },
   { value: "12", label: "products live on the App Store" },
-  { value: "4,000+", label: "users across my own products" },
-  { value: "100%", label: "Upwork Job Success Score" },
-  { value: "5.0", label: "across every client review" },
 ];
 
-const systems = [
+const promptEngineering = [
   {
-    name: "Vael",
-    eyebrow: "Live production ecosystem",
-    accent: "#C8B69B",
-    summary:
-      "A consumer AI fashion platform spanning a native SwiftUI app, a Next.js web app and a Chrome extension, all sharing one Supabase backend and data model.",
-    architecture: [
-      "33 Supabase Edge Functions",
-      "124 database migrations",
-      "Multimodal AI image and virtual try-on pipelines",
-      "Credits, rate limits, RLS, subscriptions and observability",
-    ],
-    stack: [
-      "SwiftUI",
-      "Next.js",
-      "Supabase",
-      "Gemini",
-      "FASHN",
-      "RevenueCat",
-      "Sentry",
-    ],
-    links: [
-      {
-        label: "App Store ↗",
-        href: "https://apps.apple.com/us/app/ai-wardrobe-try-on-vael/id6766129301",
-      },
-      { label: "Web app ↗", href: "https://vael-roan.vercel.app" },
-    ],
+    number: "01",
+    title: "Agent roles & boundaries",
+    body: "I turn product requirements into precise agent contracts: responsibility, tone, tools, refusal behavior, handoffs and explicit expertise boundaries.",
   },
   {
-    name: "DeepLead",
-    eyebrow: "Private AI product build",
-    accent: "#A78BFA",
-    summary:
-      "An AI-native sales intelligence system that turns an ICP into researched, scored and operationally safe outreach campaigns through specialized agent workflows.",
-    architecture: [
-      "42 API routes and 18 agent modules",
-      "Claude Agent SDK, OpenAI and policy-based model routing",
-      "Cost governor, semantic critic and data triangulation",
-      "40 tests plus intelligence, chat and rollout evaluation gates",
-    ],
-    stack: [
-      "Next.js 16",
-      "React 19",
-      "Supabase",
-      "Claude Agent SDK",
-      "OpenAI",
-      "Playwright",
-      "Vercel",
-    ],
-    links: [],
+    number: "02",
+    title: "Context engineering",
+    body: "I decide what the model sees, when it sees it and how memory, retrieval, user state and tool results are compressed into useful context.",
   },
   {
-    name: "LaunchPilot",
-    eyebrow: "Private agent platform",
-    accent: "#7DB8E8",
-    summary:
-      "A social growth control plane with multi-model content generation, scheduled publishing and authenticated integrations across major social platforms.",
-    architecture: [
-      "86 API routes and 57 AI modules",
-      "Custom agent orchestrator and Anthropic tool loop",
-      "Claude, OpenAI, Gemini and Grok routing with fallbacks",
-      "21 Supabase migrations and 15 scheduled production jobs",
-    ],
-    stack: [
-      "Next.js 16",
-      "Supabase",
-      "Anthropic",
-      "OpenAI",
-      "Stripe",
-      "OAuth",
-      "Vercel Cron",
-    ],
-    links: [],
+    number: "03",
+    title: "Tool-use prompting",
+    body: "Schemas, tool descriptions, confirmation policies and recovery instructions are designed together so agents act predictably, not just speak convincingly.",
   },
   {
-    name: "Paycontrol",
-    eyebrow: "Deployed Python backend",
-    accent: "#FBBF24",
-    summary:
-      "A parental spending-control platform for which I designed and built the complete Python backend: banking connectivity, transaction processing, policy enforcement, reporting and production infrastructure.",
-    architecture: [
-      "50 FastAPI endpoints and 36 automated tests",
-      "PostgreSQL, SQLAlchemy and 6 Alembic migrations",
-      "Plaid sync with encrypted access tokens, retries and idempotency",
-      "Rules engine, SSE events, scheduled jobs and PDF/JSON reports",
-    ],
-    stack: [
-      "Python",
-      "FastAPI",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Alembic",
-      "Plaid",
-      "Docker",
-      "Render",
-    ],
-    links: [],
+    number: "04",
+    title: "Eval-driven iteration",
+    body: "Prompts are versioned against failure cases, semantic graders, A/B evaluations and rollout gates. Quality is measured as behavior, not writing style.",
   },
   {
-    name: "Trace",
-    eyebrow: "Privacy-aware OSINT system",
-    accent: "#6EE7B7",
-    summary:
-      "A mobile-first public-web research system that assembles a legal digital-footprint report without bypassing authentication or accessing private data.",
-    architecture: [
-      "SwiftUI client with a Python FastAPI backend",
-      "Multi-source search, identity resolution and caching pipeline",
-      "Authenticated Firebase access and rate limiting",
-      "Structured, exportable reports with privacy controls",
-    ],
-    stack: [
-      "SwiftUI",
-      "FastAPI",
-      "Firebase",
-      "Anthropic",
-      "SerpAPI",
-      "Python",
-    ],
-    links: [],
+    number: "05",
+    title: "Guardrails & escalation",
+    body: "Confidence, risk and policy thresholds decide when the model may proceed, ask a clarifying question, fall back or route the decision to a human.",
   },
   {
-    name: "DispatcherPro",
-    eyebrow: "Shipped client operations system",
-    accent: "#FB7185",
-    summary:
-      "A real-time dispatch dashboard built for the US trucking market, replacing scattered operational workflows with one driver and load control center.",
-    architecture: [
-      "Live driver, load and detention tracking",
-      "Weather and route risk warnings",
-      "PDF invoice generation and document storage",
-      "Firebase authentication, realtime data and notifications",
-    ],
-    stack: ["React", "Firebase", "Maps", "Weather APIs", "PDF", "Vite"],
-    links: [],
+    number: "06",
+    title: "Cost-aware model routing",
+    body: "Prompt design and provider selection are optimized together, reserving expensive reasoning for tasks where it materially improves the outcome.",
   },
 ];
 
@@ -158,22 +54,22 @@ const operatingSystem = [
   {
     step: "01",
     title: "Own the architecture",
-    body: "I define the data model, trust boundaries, auth and RLS, agent contracts, integration surface, failure modes and deployment path before complexity compounds.",
+    body: "I define the data model, trust boundaries, agent contracts, integration surface, failure modes and deployment path before complexity compounds.",
   },
   {
     step: "02",
     title: "Build AI-native",
-    body: "Claude Code and Codex are part of my daily engineering workflow for exploration, implementation and review. I keep architectural judgment, product decisions and final accountability human-owned.",
+    body: "Claude Code and Codex are daily engineering tools. Architectural judgment, product decisions, validation and final accountability remain mine.",
   },
   {
     step: "03",
     title: "Gate production quality",
-    body: "Type checks, linting, automated tests, agent evaluations, cost and latency controls, security review, observability and deployment checks are part of the system, not an afterthought.",
+    body: "Type checks, automated tests, agent evaluations, cost and latency controls, security review and observability are part of the system itself.",
   },
   {
     step: "04",
     title: "Ship the whole product",
-    body: "I move across frontend, backend, AI, database, payments, third-party APIs and deployment without handoff gaps, then stay accountable for what happens after launch.",
+    body: "I move across frontend, backend, AI, database, mobile, payments, integrations and deployment without handoff gaps.",
   },
 ];
 
@@ -181,18 +77,22 @@ const stack = [
   "Next.js 16",
   "React 19",
   "TypeScript",
+  "Python",
+  "FastAPI",
   "Supabase",
   "PostgreSQL",
   "Claude Agent SDK",
   "Anthropic",
   "OpenAI",
-  "Python",
-  "FastAPI",
+  "Gemini",
+  "RAG",
+  "Embeddings",
   "Vercel",
-  "Stripe",
-  "OAuth",
+  "AWS",
   "Firebase",
   "SwiftUI",
+  "React Native",
+  "Kotlin",
 ];
 
 export default function AiSystemsPage() {
@@ -204,28 +104,37 @@ export default function AiSystemsPage() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(70% 90% at 0% 0%, rgba(167,139,250,0.13) 0%, transparent 68%), radial-gradient(60% 80% at 100% 100%, rgba(125,184,232,0.11) 0%, transparent 70%)",
+              "radial-gradient(70% 90% at 0% 0%, rgba(167,139,250,0.15) 0%, transparent 68%), radial-gradient(60% 80% at 100% 100%, rgba(125,184,232,0.13) 0%, transparent 70%)",
           }}
         />
         <div className="relative max-w-4xl">
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
-            Senior AI-native full-stack engineer
+            Senior AI systems engineer · Production prompt engineer
           </p>
           <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-            I architect and ship production AI systems,{" "}
-            <span className="serif-accent gradient-text">end to end.</span>
+            I turn AI behavior into{" "}
+            <span className="serif-accent gradient-text">
+              production software.
+            </span>
           </h1>
-          <p className="mt-7 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-            Next.js, Supabase, Claude agents, custom backends and real client
-            integrations. From schema and orchestration to interface,
-            deployment and production ownership, I build the complete system.
+          <p className="mt-7 max-w-3xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
+            I independently architect agent systems, prompts, tools, context,
+            evaluations, backends and product surfaces. My strongest discipline
+            is production prompt engineering: making models behave reliably
+            inside real workflows, not optimizing isolated chat responses.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href="#flagship-systems"
+              className="rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.03]"
+            >
+              Inspect the systems ↓
+            </a>
             <a
               href="https://github.com/R3LJA"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.03]"
+              className="rounded-full border border-hairline-strong px-7 py-3 text-sm font-medium text-foreground/90 transition-colors hover:border-accent/50 hover:text-accent"
             >
               GitHub profile ↗
             </a>
@@ -237,12 +146,6 @@ export default function AiSystemsPage() {
             >
               Live products ↗
             </a>
-            <Link
-              href="/work"
-              className="rounded-full border border-hairline-strong px-7 py-3 text-sm font-medium text-foreground/90 transition-colors hover:border-accent/50 hover:text-accent"
-            >
-              Full portfolio
-            </Link>
           </div>
         </div>
       </section>
@@ -262,89 +165,67 @@ export default function AiSystemsPage() {
         </section>
       </Reveal>
 
-      <section className="mt-28">
+      <section id="flagship-systems" className="mt-28 scroll-mt-24">
         <Reveal>
           <div className="max-w-3xl">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
-              Selected systems
+              Flagship systems
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
-              Complexity you can{" "}
-              <span className="serif-accent text-accent">inspect.</span>
+              The scale was already there.{" "}
+              <span className="serif-accent text-accent">
+                Now it is inspectable.
+              </span>
             </h2>
             <p className="mt-5 text-pretty leading-relaxed text-muted">
-              These are real systems I designed and built. Client and core
-              product repositories remain private; the architecture facts below
-              come directly from their codebases, migrations, routes and test
-              suites.
+              These are not tutorial builds or UI concepts. I independently
+              designed and implemented the systems below. The repositories
+              remain private; each case study exposes the architecture,
+              engineering decisions and verifiable scope without exposing
+              confidential source code.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-10 space-y-6">
-          {systems.map((system, index) => (
-            <Reveal key={system.name} delay={Math.min(index * 0.04, 0.12)}>
-              <article className="relative overflow-hidden rounded-[2rem] border border-hairline bg-surface p-7 sm:p-9">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 opacity-70"
-                  style={{
-                    background: `radial-gradient(55% 100% at 0% 0%, ${system.accent}14 0%, transparent 72%)`,
-                  }}
-                />
-                <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
-                  <div>
-                    <p
-                      className="text-[11px] font-medium uppercase tracking-[0.24em]"
-                      style={{ color: system.accent }}
-                    >
-                      {system.eyebrow}
-                    </p>
-                    <h3 className="mt-3 text-3xl font-semibold tracking-tight">
-                      {system.name}
-                    </h3>
-                    <p className="mt-4 text-pretty text-sm leading-relaxed text-muted sm:text-base">
-                      {system.summary}
-                    </p>
-                    {system.links.length > 0 && (
-                      <div className="mt-5 flex flex-wrap gap-4">
-                        {system.links.map((link) => (
-                          <a
-                            key={link.href}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-foreground/85 transition-colors hover:text-accent"
-                          >
-                            {link.label}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <ul className="grid gap-3 sm:grid-cols-2">
-                      {system.architecture.map((item) => (
-                        <li
-                          key={item}
-                          className="rounded-2xl border border-hairline bg-foreground/[0.025] px-4 py-3 text-sm leading-relaxed text-foreground/80"
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-5 flex flex-wrap gap-1.5">
-                      {system.stack.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full bg-foreground/[0.04] px-3 py-1.5 text-[11px] text-muted ring-hairline"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+        <div className="mt-10 space-y-7">
+          {flagshipSystems.map((system, index) => (
+            <Reveal key={system.slug} delay={Math.min(index * 0.04, 0.12)}>
+              <FlagshipSystemCard system={system} index={index} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-28">
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
+              Prompt engineering
+            </p>
+            <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
+              Prompts are part of the{" "}
+              <span className="serif-accent gradient-text">architecture.</span>
+            </h2>
+            <p className="mt-5 text-pretty leading-relaxed text-muted">
+              Building dozens of agents, voice workflows and AI products taught
+              me where prompting actually succeeds or fails: at the boundaries
+              between context, tools, policy, evaluation and product behavior.
+            </p>
+          </div>
+        </Reveal>
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {promptEngineering.map((item, index) => (
+            <Reveal key={item.number} delay={(index % 3) * 0.05}>
+              <article className="h-full rounded-3xl border border-hairline bg-surface p-7">
+                <span className="font-mono text-xs text-accent">
+                  {item.number}
+                </span>
+                <h3 className="mt-4 text-lg font-semibold tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </article>
             </Reveal>
           ))}
@@ -365,7 +246,9 @@ export default function AiSystemsPage() {
           {operatingSystem.map((item, index) => (
             <Reveal key={item.step} delay={(index % 2) * 0.06}>
               <div className="h-full rounded-3xl border border-hairline bg-surface p-7">
-                <span className="font-mono text-xs text-accent">{item.step}</span>
+                <span className="font-mono text-xs text-accent">
+                  {item.step}
+                </span>
                 <h3 className="mt-4 text-xl font-semibold tracking-tight">
                   {item.title}
                 </h3>
@@ -387,7 +270,9 @@ export default function AiSystemsPage() {
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight">
                 Production tools,{" "}
-                <span className="serif-accent text-accent">not buzzwords.</span>
+                <span className="serif-accent text-accent">
+                  not buzzwords.
+                </span>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -415,13 +300,15 @@ export default function AiSystemsPage() {
             }}
           />
           <h2 className="relative text-balance text-3xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
-            Need someone who can own the{" "}
-            <span className="serif-accent gradient-text-fixed">whole build?</span>
+            Need one engineer who can own the{" "}
+            <span className="serif-accent gradient-text-fixed">
+              entire AI build?
+            </span>
           </h2>
           <p className="relative mx-auto mt-5 max-w-xl text-pretty text-sm leading-relaxed text-zinc-300 sm:text-base">
-            I can step into an existing delivery machine, turn ambiguous client
-            requirements into an architecture, and carry the work through AI,
-            application code, integrations and deployment.
+            I turn ambiguous requirements into architecture and carry the work
+            through agent behavior, application code, integrations, testing and
+            production deployment.
           </p>
           <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3">
             <a

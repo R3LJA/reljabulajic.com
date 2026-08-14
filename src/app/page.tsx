@@ -6,6 +6,7 @@ import StackMarquee from "@/components/StackMarquee";
 import Reveal from "@/components/Reveal";
 import XcodeShowcase, { type ShowcaseApp } from "@/components/XcodeShowcase";
 import { featuredApps } from "@/lib/apps";
+import { flagshipSystems } from "@/lib/aiSystems";
 import { getScreenshots } from "@/lib/screenshots";
 
 const showcase: Omit<ShowcaseApp, "screenshot">[] = [
@@ -186,12 +187,97 @@ export default function Home() {
         </section>
       </Reveal>
 
+      {/* ───────── Flagship AI systems ───────── */}
+      <section className="mt-32">
+        <Reveal>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
+                Independently architected & built
+              </p>
+              <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
+                The systems behind the{" "}
+                <span className="serif-accent gradient-text">screens.</span>
+              </h2>
+              <p className="mt-5 text-pretty leading-relaxed text-muted">
+                My strongest work is not visible in an App Store screenshot. It
+                lives in agent orchestration, prompt architecture, backend
+                services, evaluation gates and production failure handling.
+              </p>
+            </div>
+            <Link
+              href="/ai-systems"
+              className="shrink-0 text-sm font-medium text-muted transition-colors hover:text-accent"
+            >
+              Full architecture portfolio →
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {flagshipSystems.map((system, index) => (
+            <Reveal key={system.slug} delay={(index % 2) * 0.06}>
+              <Link
+                href={`/ai-systems/${system.slug}`}
+                className="group relative flex h-full min-h-72 flex-col overflow-hidden rounded-[2rem] border border-hairline bg-surface p-7 transition-all duration-500 hover:-translate-y-1 hover:border-hairline-strong sm:p-8"
+              >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-80"
+                  style={{
+                    background: `radial-gradient(75% 70% at 100% 0%, ${system.accent}18 0%, transparent 72%)`,
+                  }}
+                />
+                <div className="relative">
+                  <p
+                    className="text-[10px] font-medium uppercase tracking-[0.22em]"
+                    style={{ color: system.accent }}
+                  >
+                    {system.category}
+                  </p>
+                  <h3 className="mt-3 text-3xl font-semibold tracking-tight">
+                    {system.name}
+                  </h3>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-foreground/90">
+                    {system.headline}
+                  </p>
+                </div>
+                <div className="relative mt-7 grid grid-cols-2 gap-2">
+                  {system.metrics.slice(0, 4).map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="rounded-2xl border border-hairline bg-foreground/[0.025] px-4 py-3"
+                    >
+                      <p className="text-lg font-semibold tracking-tight">
+                        {metric.value}
+                      </p>
+                      <p className="mt-0.5 text-[9px] uppercase tracking-wider text-faint">
+                        {metric.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div className="relative mt-auto flex items-center justify-between pt-7 text-sm font-medium">
+                  <span>Read the case study</span>
+                  <span
+                    className="text-xl transition-transform duration-300 group-hover:translate-x-1.5"
+                    style={{ color: system.accent }}
+                  >
+                    →
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* ───────── Featured work ───────── */}
       <section className="mt-32">
         <Reveal>
           <div className="mb-12 flex items-end justify-between">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Selected <span className="serif-accent text-accent">work</span>
+              Shipped <span className="serif-accent text-accent">products</span>
             </h2>
             <Link
               href="/work"
