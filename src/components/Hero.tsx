@@ -9,9 +9,9 @@ import ThemeToggle from "@/components/ThemeToggle";
 function Headline() {
   const words = [
     { text: "I" },
-    { text: "engineer" },
-    { text: "AI" },
-    { text: "products," },
+    { text: "architect" },
+    { text: "production" },
+    { text: "AI systems," },
     { text: "end to end.", serif: true },
   ];
   return (
@@ -158,7 +158,7 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="relative z-10 mb-5 text-xs font-medium uppercase tracking-[0.28em] text-muted"
       >
-        Relja Bulajić · Founder · Full-Stack & AI Engineer · Belgrade
+        Relja Bulajić · Senior AI Systems & Prompt Engineer · Belgrade
       </motion.p>
 
       <Headline />
@@ -169,9 +169,9 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.75 }}
         className="relative z-10 mt-7 max-w-xl text-pretty text-base text-muted sm:text-lg"
       >
-        12 of my own apps live on the App Store with 4,000+ users, and clients
-        get the same founder-level ownership: production AI, custom Python
-        backends and polished native front ends.
+        Independently built systems with 57 AI modules, 18 specialized agents,
+        custom model orchestration and complete Python backends. I turn prompts,
+        tools and context into reliable production behavior.
       </motion.p>
 
       <motion.div
@@ -181,27 +181,27 @@ export default function Hero() {
         className="relative z-10 mt-10 flex flex-wrap items-center justify-center gap-4"
       >
         <Link
-          href="/work"
+          href="/ai-systems"
           className="rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.03]"
         >
-          See the work
+          Inspect the AI systems
         </Link>
         <a
-          href="https://apps.apple.com/md/developer/relja-bulajic/id1801518678"
+          href="https://github.com/R3LJA"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 rounded-full border border-hairline-strong px-7 py-3 text-sm font-medium text-foreground/90 backdrop-blur transition-colors hover:border-accent/50 hover:text-accent"
         >
-          <svg viewBox="0 0 384 512" className="size-4 fill-current" aria-hidden>
-            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+          <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden>
+            <path d="M12 .7C5.7.7.7 5.8.7 12.1c0 5 3.2 9.3 7.7 10.8.6.1.8-.2.8-.5v-2.2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.3-5.1-5.6 0-1.2.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.2a10.8 10.8 0 0 1 5.6 0c2.1-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.3-5.2 5.6.4.4.8 1.1.8 2.1v3.2c0 .3.2.7.8.5a11.4 11.4 0 0 0 7.7-10.8C23.3 5.8 18.3.7 12 .7Z" />
           </svg>
-          All my apps
+          GitHub profile
         </a>
         <Link
-          href="/about"
+          href="/work"
           className="rounded-full border border-hairline-strong px-7 py-3 text-sm font-medium text-foreground/90 backdrop-blur transition-colors hover:border-accent/50 hover:text-accent"
         >
-          About me
+          All product work
         </Link>
       </motion.div>
 

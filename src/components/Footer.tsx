@@ -20,9 +20,9 @@ export default function Footer() {
             <span className="font-semibold tracking-tight">Relja Bulajić</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-            Founder of Imperial Labs, full-stack & AI engineer. I design,
-            build and ship products end to end, from SwiftUI to custom
-            backends.
+            Senior AI systems and production prompt engineer. I independently
+            architect agents, custom backends and complete product experiences
+            from idea to production.
           </p>
           <p className="mt-4 flex items-center gap-2 text-xs text-faint">
             <span className="relative flex size-1.5">

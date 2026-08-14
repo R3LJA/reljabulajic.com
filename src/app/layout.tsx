@@ -25,9 +25,9 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://reljabulajic.com"),
-  title: "Relja Bulajić · Full-Stack & AI Engineer",
+  title: "Relja Bulajić · Senior AI Systems & Prompt Engineer",
   description:
-    "Full-stack & AI engineer. I design and ship AI-native products end to end, from pixel-perfect SwiftUI to custom Python backends and LLM systems. Top Rated on Upwork, 100% Job Success, 12 apps live on the App Store with 4,000+ users.",
+    "Senior AI systems and production prompt engineer. I independently architect and ship multi-agent platforms, custom Python backends, evaluations, voice AI and complete AI-native products.",
 };
 
 export default function RootLayout({

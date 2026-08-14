@@ -29,6 +29,18 @@ const tabs: Tab[] = [
     ),
   },
   {
+    href: "/ai-systems",
+    label: "Systems",
+    icon: (active) => (
+      <svg viewBox="0 0 24 24" fill="none" className="size-[22px]">
+        <circle cx="5" cy="12" r="2.2" stroke="currentColor" strokeWidth={active ? 2 : 1.6} fill={active ? "currentColor" : "none"} fillOpacity={active ? 0.16 : 0} />
+        <circle cx="19" cy="6" r="2.2" stroke="currentColor" strokeWidth={active ? 2 : 1.6} fill={active ? "currentColor" : "none"} fillOpacity={active ? 0.16 : 0} />
+        <circle cx="19" cy="18" r="2.2" stroke="currentColor" strokeWidth={active ? 2 : 1.6} fill={active ? "currentColor" : "none"} fillOpacity={active ? 0.16 : 0} />
+        <path d="m7.1 11.1 9.8-4.2M7.1 12.9l9.8 4.2" stroke="currentColor" strokeWidth={active ? 2 : 1.6} strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     href: "/work",
     label: "Work",
     icon: (active) => (
@@ -99,7 +111,7 @@ export default function TabBar() {
               key={tab.href}
               href={tab.href}
               aria-current={active ? "page" : undefined}
-              className="relative flex flex-col items-center gap-0.5 rounded-[18px] px-5 py-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-accent/60"
+              className="relative flex flex-col items-center gap-0.5 rounded-[18px] px-4 py-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-accent/60 sm:px-5"
             >
               {active && (
                 <motion.span
