@@ -382,15 +382,15 @@ export default function Home() {
             </h2>
             <p className="relative mt-5 max-w-xl text-sm leading-relaxed text-muted">
               I hold an engineering degree in software and run my own portfolio
-              of startups, and it shows in how I build: the SwiftUI interface,
-              the Python or Firebase backend behind it, the database schema,
+              of startups, and it shows in how I build: the native SwiftUI iOS
+              app, the Python or Firebase backend behind it, the database schema,
               the payment rails and the deployment pipeline, all designed by
               one person who understands every layer and has skin in the game.
               No hand-offs, no gaps where bugs hide.
             </p>
             <div className="relative mt-7 flex flex-wrap gap-1.5">
               {[
-                "SwiftUI front ends",
+                "Full-stack iOS · SwiftUI",
                 "FastAPI · Python backends",
                 "PostgreSQL · Firestore",
                 "Plaid · Stripe · StoreKit 2",

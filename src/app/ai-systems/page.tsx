@@ -69,7 +69,7 @@ const operatingSystem = [
   {
     step: "04",
     title: "Ship the whole product",
-    body: "I move across frontend, backend, AI, database, mobile, payments, integrations and deployment without handoff gaps.",
+    body: "I move across frontend, backend, AI, database, native iOS, payments, integrations and deployment without handoff gaps.",
   },
 ];
 

@@ -158,7 +158,7 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="relative z-10 mb-5 text-xs font-medium uppercase tracking-[0.28em] text-muted"
       >
-        Relja Bulajić · Senior AI Systems & Prompt Engineer · Belgrade
+        Relja Bulajić · Senior AI Systems Engineer · Full-Stack iOS Developer
       </motion.p>
 
       <Headline />
@@ -170,8 +170,9 @@ export default function Hero() {
         className="relative z-10 mt-7 max-w-xl text-pretty text-base text-muted sm:text-lg"
       >
         Independently built systems with 57 AI modules, 18 specialized agents,
-        custom model orchestration and complete Python backends. I turn prompts,
-        tools and context into reliable production behavior.
+        custom model orchestration and complete Python backends, next to 12
+        native iOS apps live on the App Store. I turn prompts, tools and
+        context into reliable production behavior.
       </motion.p>
 
       <motion.div
