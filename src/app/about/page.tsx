@@ -122,7 +122,7 @@ const story: {
         />
       </svg>
     ),
-    text: "A big part of my work lives in health-tech and life sciences: posture tracking on real motion sensors, GLP-1 nutrition, AI skin analysis, HealthKit-driven energy coaching, and Lab+, an experimental-design validation platform for researchers. It's a domain where my security-first engineering and respect for sensitive user data matter as much as the code.",
+    text: "A big part of my work lives in health-tech and life sciences: posture tracking on real motion sensors, GLP-1 nutrition, AI skin analysis, HealthKit-driven energy coaching, and Lab+, an experimental-design validation platform for researchers that I built for the startup program of one of the most prestigious molecular-biology faculties. It's a domain where my security-first engineering and respect for sensitive user data matter as much as the code.",
   },
   {
     badge: "The trust",

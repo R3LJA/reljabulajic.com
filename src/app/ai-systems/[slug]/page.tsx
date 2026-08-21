@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
+import SystemFlow from "@/components/SystemFlow";
 import SystemScene from "@/components/SystemScene";
 import { flagshipSystems, getAiSystem } from "@/lib/aiSystems";
 
@@ -95,13 +96,15 @@ export default async function AiSystemCaseStudy({
         <section
           className="relative mt-16 min-h-[360px] overflow-hidden rounded-[2.5rem] border border-hairline bg-[#0b0d0f] sm:min-h-[480px]"
         >
-          <SystemScene slug={system.slug} accent={system.accent} />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent px-6 pb-6 pt-24 sm:px-9 sm:pb-8">
-            <p className="max-w-3xl text-xs leading-relaxed text-zinc-400">
-              {system.evidence}
-            </p>
-          </div>
+          <SystemScene slug={system.slug} accent={system.accent} detail />
         </section>
+        <p className="mt-4 max-w-3xl px-2 text-xs leading-relaxed text-faint">
+          Live simulation of the system&apos;s real behavior. {system.evidence}
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.05}>
+        <SystemFlow flow={system.flow} accent={system.accent} />
       </Reveal>
 
       <Reveal>

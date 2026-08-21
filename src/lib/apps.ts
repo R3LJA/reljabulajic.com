@@ -136,12 +136,16 @@ export const apps: AppProject[] = [
     name: "Lab+",
     tagline: "A second set of eyes before the experiment runs.",
     description:
-      "Lab+ is an AI-assisted experimental-design validation platform for researchers: a second set of eyes before a plan goes to a supervisor or burns through reagents. Rather than a science chatbot, it's a structured system: guided inputs become persistent experiment objects, deterministic validation rules flag missing controls and confounders, statistical-planning support estimates sample sizes and test choices, and an explicit scoring model rates the design. The iOS app sits over a Supabase Postgres backend I designed around those rules, blending hard logic with AI reasoning so the advice is auditable, not just plausible.",
+      "Lab+ is an AI-assisted experimental-design validation platform for researchers: a second set of eyes before a plan goes to a supervisor or burns through reagents. I built it for submission to the startup program of one of the most prestigious molecular-biology faculties, shaped around the real experimental workflows researchers run there. Rather than a science chatbot, it's a structured system: guided inputs become persistent experiment objects, deterministic validation rules flag missing controls and confounders, statistical-planning support estimates sample sizes and test choices, and an explicit scoring model rates the design. The iOS app sits over a Supabase Postgres backend I designed around those rules, blending hard logic with AI reasoning so the advice is auditable, not just plausible.",
     role: "Founder & sole developer: product, iOS app + Supabase backend, AI system design.",
     stack: ["SwiftUI", "Supabase", "PostgreSQL", "Validation engine", "Statistical planning"],
+    metrics: [
+      "Built for a startup program at a leading molecular-biology faculty",
+      "Deterministic validation rules + auditable AI reasoning",
+    ],
     accent: "#67E8F9",
     accentSoft: "#479ca8",
-    featured: false,
+    featured: true,
   },
   {
     slug: "ryse",
