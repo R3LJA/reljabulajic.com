@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import ChromeGate from "@/components/ChromeGate";
 import FlowField from "@/components/FlowField";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -42,10 +43,14 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col grain">
         <SmoothScroll />
-        <FlowField />
+        <ChromeGate>
+          <FlowField />
+        </ChromeGate>
         <div className="flex-1">{children}</div>
-        <Footer />
-        <TabBar />
+        <ChromeGate>
+          <Footer />
+          <TabBar />
+        </ChromeGate>
       </body>
     </html>
   );

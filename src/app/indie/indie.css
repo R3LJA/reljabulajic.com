@@ -1,0 +1,114 @@
+/* /indie has its own design, independent of the portfolio: a full-width
+   masthead (Relja, the newsletter, total revenue) over a table of his apps
+   ranked like a market board. Paper and ink with a highlighter accent,
+   light by default with a dark switch. Every token is scoped to #indie-root
+   so nothing leaks into the portfolio. */
+
+#indie-root {
+  --i-bg: #f2eee6;
+  --i-surface: #fffdf8;
+  --i-ink: #161513;
+  --i-muted: #5c574f;
+  --i-faint: #958e84;
+  --i-line: rgba(22, 21, 19, 0.1);
+  --i-line-strong: rgba(22, 21, 19, 0.2);
+  --i-mark: #dcf73c;
+  --i-mark-ink: #161513;
+  --i-shadow: 0 1px 0 rgba(22, 21, 19, 0.03), 0 12px 30px -22px rgba(22, 21, 19, 0.35);
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  color: var(--i-ink);
+  background: var(--i-bg);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+#indie-root[data-theme="dark"] {
+  --i-bg: #111010;
+  --i-surface: #1b1a18;
+  --i-ink: #f3efe7;
+  --i-muted: #aaa398;
+  --i-faint: #6f6a61;
+  --i-line: rgba(243, 239, 231, 0.1);
+  --i-line-strong: rgba(243, 239, 231, 0.2);
+  --i-mark: #d4f03a;
+  --i-mark-ink: #111010;
+  --i-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 14px 36px -24px rgba(0, 0, 0, 0.8);
+}
+
+/* Theme switch icon: moon in light, sun in dark */
+#indie-root .indie-icon-sun {
+  display: none;
+}
+#indie-root[data-theme="dark"] .indie-icon-sun {
+  display: block;
+}
+#indie-root[data-theme="dark"] .indie-icon-moon {
+  display: none;
+}
+
+#indie-root ::selection {
+  background: var(--i-mark);
+  color: var(--i-mark-ink);
+}
+
+.indie-display {
+  font-family: var(--font-bricolage), var(--font-geist-sans), sans-serif;
+  font-variation-settings: "opsz" 96;
+  letter-spacing: -0.03em;
+}
+
+/* Highlighter stroke behind a word; an underline on dark */
+.indie-mark {
+  background: linear-gradient(
+    104deg,
+    transparent 0.3em,
+    var(--i-mark) 0.4em,
+    var(--i-mark) calc(100% - 0.3em),
+    transparent calc(100% - 0.2em)
+  );
+  background-size: 100% 0.6em;
+  background-position: 0 88%;
+  background-repeat: no-repeat;
+  color: inherit;
+  padding: 0 0.12em;
+  margin: 0 -0.12em;
+}
+#indie-root[data-theme="dark"] .indie-mark {
+  background-size: 100% 0.14em;
+  background-position: 0 96%;
+}
+
+/* Table rows: the whole row is the link */
+.indie-row {
+  transition: background-color 0.2s ease;
+}
+.indie-row:hover {
+  background: var(--i-surface);
+}
+.indie-row:hover .indie-row-arrow {
+  transform: translate(2px, -2px);
+  color: var(--i-ink);
+}
+.indie-row-arrow {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Entrance: pure CSS, so the page shows even before JS loads */
+.indie-rise {
+  animation: indie-rise 0.6s cubic-bezier(0.21, 0.6, 0.35, 1) both;
+}
+@keyframes indie-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indie-rise {
+    animation: none;
+  }
+}
