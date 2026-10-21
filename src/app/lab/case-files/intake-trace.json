@@ -1,0 +1,166 @@
+{
+  "label": "Replay of a recorded run",
+  "recorded_at": "2026-10-08T09:49:20.981Z",
+  "client": "Daniel and Priya Kessler (synthetic client)",
+  "model": "claude-opus-5-5",
+  "steps": [
+    {
+      "step": "checklist",
+      "start_ms": 3,
+      "end_ms": 38112
+    },
+    {
+      "step": "read",
+      "start_ms": 38113,
+      "end_ms": 81470
+    },
+    {
+      "step": "rules",
+      "start_ms": 81470,
+      "end_ms": 81470
+    },
+    {
+      "step": "review",
+      "start_ms": 81470,
+      "end_ms": 141631
+    }
+  ],
+  "reads": [
+    {
+      "ms": 49606,
+      "file": "Daniel W2.pdf",
+      "form": "W-2",
+      "payer": "Brightline Logistics Inc.",
+      "tax_year": 2026
+    },
+    {
+      "ms": 60622,
+      "file": "Priya W2.pdf",
+      "form": "W-2",
+      "payer": "Riverside Pediatric Group LLC",
+      "tax_year": 2025
+    },
+    {
+      "ms": 65728,
+      "file": "credit union tax form.pdf",
+      "form": "1099-INT",
+      "payer": "Lakeshore Federal Credit Union",
+      "tax_year": 2026
+    },
+    {
+      "ms": 72512,
+      "file": "Swiftly 1099.pdf",
+      "form": "1099-NEC",
+      "payer": "Swiftly Rides Inc.",
+      "tax_year": 2026
+    },
+    {
+      "ms": 81470,
+      "file": "mortgage statement 1098.pdf",
+      "form": "1098",
+      "payer": "Summit Ridge Mortgage",
+      "tax_year": 2026
+    }
+  ],
+  "rule": {
+    "ms": 81470,
+    "rule": "tax_year",
+    "file": "Priya W2.pdf",
+    "title": "W-2 from Riverside Pediatric Group LLC is for 2025, not 2026",
+    "detail": "The upload reports calendar year 2025. It does not count toward the 2026 list; the 2026 form is still needed."
+  },
+  "checklist": [
+    {
+      "id": "E1",
+      "form": "W-2",
+      "payer": "Brightline Logistics Inc.",
+      "source": "Last year's upload w2-brightline-2025.pdf; included in Form 1040 line 1a",
+      "status": "received",
+      "files": ["Daniel W2.pdf"],
+      "note": "2026 W-2 Copy B from Brightline Logistics. Box 1 is $97,800 (prior year $94,200, +3.8%). Box 2 is $11,310 and Box 12a D is $6,000. No large changes."
+    },
+    {
+      "id": "E2",
+      "form": "W-2",
+      "payer": "Riverside Pediatric Group LLC",
+      "source": "Last year's upload w2-riverside-2025.pdf; included in Form 1040 line 1a",
+      "status": "missing",
+      "files": ["Priya W2.pdf"],
+      "note": "The uploaded W-2 is for tax year 2025 (rule check), so it does not satisfy this row. The 2026 W-2 from Riverside Pediatric Group is still needed."
+    },
+    {
+      "id": "E3",
+      "form": "1099-INT",
+      "payer": "Lakeshore Federal Credit Union",
+      "source": "Schedule B line 1; last year's upload 1099int-lakeshore-2025.pdf",
+      "status": "received",
+      "files": ["credit union tax form.pdf"],
+      "note": "2026 1099-INT from Lakeshore FCU. Box 1 is $1,380 against $412 last year (+235%), flagged for the preparer."
+    },
+    {
+      "id": "E4",
+      "form": "1099-COMPOSITE",
+      "payer": "Harbor Point Securities",
+      "source": "Schedule B lines 1 and 5, Schedule D lines 1a, 8a and 13; last year's upload 1099-composite-harborpoint-2025.pdf",
+      "status": "missing",
+      "files": [],
+      "note": "No 2026 composite 1099 from Harbor Point Securities (joint account ending 3391) has been uploaded."
+    },
+    {
+      "id": "E5",
+      "form": "1098",
+      "payer": "Keystone Home Lending",
+      "source": "Last year's upload 1098-keystone-2025.pdf",
+      "status": "missing",
+      "files": [],
+      "note": "No 2026 1098 from Keystone Home Lending. A new 1098 from Summit Ridge Mortgage (originated 2026-07-15, same property) suggests the Keystone loan was refinanced mid-year, so Keystone's 1098 for Jan–Jul 2026 is still needed."
+    },
+    {
+      "id": "C1",
+      "form": "Confirm",
+      "payer": "2026 federal estimated tax payments",
+      "audience": "client",
+      "status": "open",
+      "files": [],
+      "note": "The client must confirm which of the four $500 2026 estimated payments were made, with the date, amount and method of each."
+    },
+    {
+      "id": "C2",
+      "form": "Confirm",
+      "payer": "2025 overpayment applied to 2026 estimated tax",
+      "audience": "preparer",
+      "status": "open",
+      "files": [],
+      "note": "The preparer must verify that the $1,000 2025 overpayment was posted to the 2026 account before counting it as a payment."
+    },
+    {
+      "id": "C3",
+      "form": "Confirm",
+      "payer": "Maya Kessler turns 17 in 2026",
+      "audience": "preparer",
+      "status": "open",
+      "files": [],
+      "note": "Maya turns 17 on 2026-05-21. The preparer decides how she is treated for 2026."
+    }
+  ],
+  "eval": {
+    "client": "kessler",
+    "seconds": 142,
+    "usage": {
+      "input": 68736,
+      "output": 13112
+    },
+    "planted": 8,
+    "caught": 8,
+    "missed": [],
+    "extras": [
+      {
+        "kind": "preparer_note",
+        "form": "1098",
+        "payer": "Summit Ridge Mortgage",
+        "text": "Refinance treatment and itemize-vs-standard decision The preparer must decide the treatment of any refinance points or fees once the closing disclosure arrives, and whether to itemize when both 1098s are in. The 2025 return used the standard deduction. mortgage statement 1098.pdf: Box 6 blank, only one borrower TIN shown (ending 4821), Box 10 $3,290. Intake E5 note on the standard deduction.",
+        "source": "finding"
+      }
+    ]
+  }
+}

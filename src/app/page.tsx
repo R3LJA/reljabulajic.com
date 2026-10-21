@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
+import ReviewCard from "@/components/ReviewCard";
 import SignalThread from "@/components/SignalThread";
 import StackMarquee from "@/components/StackMarquee";
 import Reveal from "@/components/Reveal";
 import XcodeShowcase, { type ShowcaseApp } from "@/components/XcodeShowcase";
 import { featuredApps } from "@/lib/apps";
 import { flagshipSystems } from "@/lib/aiSystems";
+import { reviews, UPWORK_PROFILE_URL } from "@/lib/reviews";
 import { getScreenshots } from "@/lib/screenshots";
 
 const showcase: Omit<ShowcaseApp, "screenshot">[] = [
@@ -97,24 +99,6 @@ const proof = [
   { value: "12", label: "apps live on the App Store" },
   { value: "4,000+", label: "users on my own apps" },
   { value: "B.Eng.", label: "graduated software engineer" },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Relja is transparent, honest, and truly proactive. He doesn't just execute tasks, he thinks ahead and brings great ideas to the table.",
-    author: "Upwork client, Firebase SwiftUI app",
-  },
-  {
-    quote:
-      "The handover was fast, clean, and professional. He communicated clearly and delivered exactly what was promised.",
-    author: "Upwork client, iOS app acquisition",
-  },
-  {
-    quote:
-      "Relja is a great professional. He communicated well along the way and helped me a lot to resolve the issue I was facing.",
-    author: "Upwork client, iOS consulting",
-  },
 ];
 
 const aiCapabilities = [
@@ -299,6 +283,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ───────── Client reviews ───────── */}
+      {reviews.length > 0 && (
+        <section className="mt-32">
+          <Reveal>
+            <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
+                  Client reviews
+                </p>
+                <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Their words,{" "}
+                  <span className="serif-accent text-accent">not mine</span>.
+                </h2>
+                <p className="mt-5 text-pretty text-muted">
+                  Quoted word for word from Upwork, where every client review
+                  is 5.0.
+                </p>
+              </div>
+              <a
+                href={UPWORK_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 text-sm text-muted transition-colors hover:text-accent"
+              >
+                All reviews on Upwork ↗
+              </a>
+            </div>
+          </Reveal>
+          <div
+            className={`grid gap-6 ${
+              reviews.length >= 3
+                ? "md:grid-cols-2 lg:grid-cols-3"
+                : reviews.length === 2
+                  ? "md:grid-cols-2"
+                  : ""
+            }`}
+          >
+            {reviews.map((review, i) => (
+              <ReviewCard
+                key={`${review.client}-${review.start}`}
+                review={review}
+                index={i}
+                wide={reviews.length === 1}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* ───────── AI Engineering ───────── */}
       <section className="mt-32">
         <Reveal>
@@ -478,30 +511,6 @@ export default function Home() {
           screenshot: getScreenshots(s.slug)[0],
         }))}
       />
-
-      {/* ───────── Testimonials ───────── */}
-      <section className="mt-32">
-        <Reveal>
-          <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight sm:text-4xl">
-            What clients <span className="serif-accent text-accent">say</span>
-          </h2>
-        </Reveal>
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.author} delay={i * 0.08}>
-              <figure className="flex h-full flex-col justify-between rounded-3xl border border-hairline bg-surface p-7">
-                <blockquote className="text-pretty text-[15px] leading-relaxed text-foreground/85">
-                  “{t.quote}”
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-2 text-xs text-faint">
-                  <span className="text-accent">★★★★★</span>
-                  {t.author}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </section>
 
       {/* ───────── CTA: always-dark "midnight" card with founder loop ───────── */}
       <Reveal>
