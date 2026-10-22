@@ -31,13 +31,12 @@ export function AiView() {
       }}
     >
       <div className="relative z-[2]">
-        <p className="text-sm uppercase tracking-[0.2em] text-[var(--night-muted)]">AI Engineering</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-[var(--night-muted)]">AI systems</p>
         <h1 className="v2-display mt-6 text-[15vw] md:text-[8vw]">
-          <MaskLine>Systems.</MaskLine>
+          <MaskLine>My work.</MaskLine>
         </h1>
         <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[var(--night-muted)]">
-          Designed and built end to end: the agents, the prompts and evals, the backend and the
-          approval flow around them.
+          {({ 5: "Five", 6: "Six", 7: "Seven" } as Record<number, string>)[aiCases.length] ?? aiCases.length} AI systems I designed and built myself, end to end. Open one to see how it works.
         </p>
 
         <ul className="mt-20 border-t border-white/10">

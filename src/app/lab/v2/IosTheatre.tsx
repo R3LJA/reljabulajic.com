@@ -44,7 +44,7 @@ export default function IosTheatre() {
   return (
     <section id="v2-ios" className="relative bg-[var(--day)] text-[var(--ink)]">
       <div className="px-[5vw] pb-[6vh] pt-[18vh]">
-        <p className="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">02 · iOS Apps</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">Also · iOS Apps</p>
         <h2 className="v2-display mt-6 text-[14vw] md:text-[8vw]">
           <MaskLine>Shipped to the</MaskLine>
           <MaskLine delay={0.08}>App Store, solo.</MaskLine>

@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { flagshipSystems } from "@/lib/aiSystems";
 import { aiCases } from "./data";
 import { EASE, MaskLine } from "./Hero";
 import { spotHandlers } from "./Practices";
 
 const pad = (n: number) => String(n).padStart(2, "0");
+const WORDS: Record<number, string> = { 5: "Five", 6: "Six", 7: "Seven" };
 
 /**
  * The AI systems as one stage: a list on the left that follows the scroll,
@@ -37,21 +37,22 @@ export default function AiStack() {
   };
 
   const c = aiCases[active];
-  const flow = flagshipSystems.find((s) => s.slug === c.slug)!.flow;
 
   return (
     <section id="v2-ai" className="v2-night v2-spot v2-grain relative" {...spotHandlers()}>
       <div className="relative z-[2] px-[5vw] pb-[2vh] pt-[16vh] md:px-[9vw]">
-        <p className="text-sm uppercase tracking-[0.2em] text-[var(--night-muted)]">01 · AI Engineering</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-[var(--night-muted)]">01 · AI systems</p>
         <h2 className="v2-display mt-6 text-[14vw] md:text-[8vw]">
-          <MaskLine>Systems that</MaskLine>
-          <MaskLine delay={0.08}>
-            <span className="v2-gold">hold up</span> in production.
+          <MaskLine>
+            My <span className="v2-gold">work.</span>
           </MaskLine>
         </h2>
+        <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-[var(--night-muted)]">
+          {WORDS[n] ?? n} AI systems I designed and built myself, end to end. Here is what each one does.
+        </p>
       </div>
 
-      <div ref={ref} className="relative z-[2]" style={{ height: `${n * 65}svh` }}>
+      <div ref={ref} className="relative z-[2]" style={{ height: `${n * 50}svh` }}>
         <div className="sticky top-0 flex h-[100svh] items-center px-[5vw] md:px-[9vw]">
           <div className="grid w-full items-center gap-8 md:grid-cols-[0.8fr_1.4fr] md:gap-[4vw]">
             {/* the list */}
@@ -67,10 +68,9 @@ export default function AiStack() {
                       onClick={() => goTo(i)}
                       className={`block text-left transition-opacity duration-500 ${i === active ? "opacity-100" : "opacity-30 hover:opacity-60"}`}
                     >
-                      <span className="block font-mono text-[11px] text-[var(--night-muted)]">
-                        {pad(i + 1)} · {s.category}
-                      </span>
+                      <span className="block font-mono text-[11px] text-[var(--night-muted)]">{pad(i + 1)}</span>
                       <span className="block text-[2.9vw] leading-[1.05] tracking-[-0.045em]">{s.name}</span>
+                      <span className="mt-1 block text-[13px] text-[var(--night-muted)]">{s.category}</span>
                     </button>
                   </li>
                 ))}
@@ -118,17 +118,16 @@ export default function AiStack() {
                     <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--gold)] md:hidden">{c.category}</p>
                     <p className="text-3xl tracking-[-0.04em] md:hidden">{c.name}</p>
                     <p className="mt-2 max-w-2xl text-xl leading-snug tracking-[-0.02em] md:mt-0 md:text-2xl">{c.headline}</p>
-                    {/* how it works, step by step */}
-                    <div className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-2">
-                      {flow.map((step, i) => (
-                        <span key={step} className="flex items-center gap-2">
-                          <span className="rounded-full border border-white/12 px-3 py-1 font-mono text-[11px] text-[var(--night-ink)]/75">
-                            {step}
-                          </span>
-                          {i < flow.length - 1 && <span className="text-[var(--gold)]/60">→</span>}
-                        </span>
+                    {/* what it does, in three plain points, then what it gets you */}
+                    <ul className="mt-5 space-y-2">
+                      {c.does.map((d) => (
+                        <li key={d} className="flex gap-3 text-[15px] leading-snug text-[var(--night-ink)]/80">
+                          <span className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-[var(--gold)]" />
+                          {d}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
+                    <p className="mt-5 text-[15px] text-[var(--gold)]">{c.gives}</p>
                   </motion.div>
                 </AnimatePresence>
                 <span className="mt-6 inline-flex items-center gap-3 text-sm text-[var(--gold)]">
