@@ -1,4 +1,7 @@
 import { flagshipSystems, type AiSystem } from "@/lib/aiSystems";
+import { PLAIN } from "../data";
+import { BASTION_MOCK } from "./bastionMock";
+import { DISPATCH_MOCK } from "./dispatchMock";
 
 // Case-study copy for /lab/v2/systems. Everything is rewritten from the facts
 // in lib/aiSystems.ts: no new numbers, clients or results.
@@ -82,12 +85,18 @@ const EXTRA: Record<string, CaseExtra> = {
 
 export type CaseStudy = AiSystem & CaseExtra;
 
-export const caseOrder = ["launchpilot", "deeplead", "supportagent", "voicevault", "paycontrol"];
+const MOCK = process.env.NODE_ENV !== "production";
+
+export const caseOrder = [...(MOCK ? ["dispatch", "bastion"] : []), "launchpilot", "deeplead", "supportagent", "voicevault", "paycontrol"];
 
 export function getCase(slug: string): CaseStudy | undefined {
+  if (MOCK && slug === "dispatch") return DISPATCH_MOCK;
+  if (MOCK && slug === "bastion") return BASTION_MOCK;
   const base = flagshipSystems.find((s) => s.slug === slug);
   const extra = EXTRA[slug];
-  return base && extra ? { ...base, ...extra } : undefined;
+  if (!base || !extra) return undefined;
+  // plain-language name and one-liner in place of the technical ones
+  return { ...base, ...extra, category: PLAIN[slug].label, headline: PLAIN[slug].line };
 }
 
 export function nextCase(slug: string): CaseStudy {

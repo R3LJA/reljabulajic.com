@@ -10,7 +10,9 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef, useState } from "react";
+import BastionDemo from "../demos/BastionDemo";
 import DeepLeadDemo from "../demos/DeepLeadDemo";
+import DispatchDemo from "../demos/DispatchDemo";
 import LaunchPilotDemo from "../demos/LaunchPilotDemo";
 import PayControlDemo from "../demos/PayControlDemo";
 import SupportAgentDemo from "../demos/SupportAgentDemo";
@@ -77,6 +79,8 @@ function Opening({ c, index, total }: { c: CaseStudy; index: number; total: numb
 /* ── How it works: the pipeline, one step per scroll ──────────────────── */
 
 const DEMOS: Record<string, (p: { step: number }) => React.ReactNode> = {
+  dispatch: DispatchDemo,
+  bastion: BastionDemo,
   launchpilot: LaunchPilotDemo,
   deeplead: DeepLeadDemo,
   supportagent: SupportAgentDemo,

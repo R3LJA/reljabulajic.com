@@ -139,7 +139,7 @@ export function Reel() {
   const videoScale = useTransform(p, [0, 1], [1.35, 1]);
 
   return (
-    <motion.div ref={ref} style={{ backgroundColor: bg }} className="relative h-[460vh]">
+    <motion.div ref={ref} style={{ backgroundColor: bg }} className="relative h-[340vh]">
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         <motion.div className="absolute inset-0" style={{ clipPath }}>
           <motion.video
@@ -296,7 +296,7 @@ export function Close() {
       <div className="relative mt-20 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-[1fr_auto] md:items-end">
         <div>
           <p className="text-2xl tracking-[-0.03em]">Relja Bulajić</p>
-          <p className="mt-2 text-[15px] text-[var(--night-muted)]">AI Engineer and iOS Developer, Belgrade</p>
+          <p className="mt-2 text-[15px] text-[var(--night-muted)]">AI Engineer, Belgrade · ships his own iOS apps</p>
         </div>
         <FooterLinks />
       </div>

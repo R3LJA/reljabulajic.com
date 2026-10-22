@@ -6,10 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import AiStack from "./AiStack";
 import Hero, { EASE } from "./Hero";
 import IosTheatre from "./IosTheatre";
-import Practices from "./Practices";
 import Reviews from "./Reviews";
+import Security from "./Security";
 import Speed from "./speed/Speed";
-import { Close, Numbers, Reel, Statement } from "./Sections";
+import { Close, Reel, Statement } from "./Sections";
 import { AboutView, AiView, IosView } from "./Views";
 
 type View = "home" | "ai" | "ios" | "about";
@@ -37,10 +37,6 @@ function Clock() {
     return () => clearInterval(id);
   }, []);
   return <span className="tabular-nums">{time || "--:--"}</span>;
-}
-
-function scrollToId(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 export default function V2() {
@@ -90,13 +86,13 @@ export default function V2() {
             <div ref={statementRef}>
               <Statement />
             </div>
-            <Practices onPick={(side) => scrollToId(side === "ai" ? "v2-ai" : "v2-ios")} />
-            <Reel />
+            {/* what I build, then the proof, then the pace; iOS backs it up */}
             <AiStack />
-            <Numbers />
-            <Speed />
-            <IosTheatre />
             <Reviews />
+            <Security />
+            <Speed />
+            <Reel />
+            <IosTheatre />
             <Close />
           </>
         )}
