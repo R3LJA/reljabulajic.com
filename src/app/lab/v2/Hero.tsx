@@ -118,7 +118,7 @@ export default function Hero({ onScrollDown }: { onScrollDown: () => void }) {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--gold)]">
             <span className="v2-mask"><motion.span className="block" initial={reduced ? false : { y: "110%" }} animate={{ y: "0%" }} transition={{ duration: 0.7, ease: EASE, delay: 0.05 }}>Production AI agents · Belgrade</motion.span></span>
           </p>
-          <h1 className="v2-display mt-4 text-[15vw] md:text-[11vw]">
+          <h1 className="v2-display mt-4 pb-[0.16em] text-[15vw] md:text-[11vw]">
             <span className="v2-mask"><motion.span className="block" initial={reduced ? false : { y: "108%" }} animate={{ y: "0%" }} transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}>AI Engineer</motion.span></span>
           </h1>
           <motion.p
