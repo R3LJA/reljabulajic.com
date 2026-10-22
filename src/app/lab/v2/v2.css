@@ -45,6 +45,9 @@ body:has(#v2-root) {
   /* room for descenders so the mask never clips a g or a y */
   padding-bottom: 0.14em;
   margin-bottom: -0.14em;
+  /* and side room, so tight tracking never shaves the last glyph (the 0 in 5.0) */
+  padding-inline: 0.06em;
+  margin-inline: -0.06em;
 }
 
 .v2-night {
