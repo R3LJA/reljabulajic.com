@@ -2,7 +2,7 @@ import { flagshipSystems, type AiSystem } from "@/lib/aiSystems";
 import { PLAIN } from "../data";
 import { BASTION_MOCK } from "./bastionMock";
 import { DISPATCH_MOCK } from "./dispatchMock";
-import { PERO_MOCK } from "./peroMock";
+import { ATELIER_MOCK } from "./atelierMock";
 
 // Case-study copy for /lab/v2/systems. Everything is rewritten from the facts
 // in lib/aiSystems.ts: no new numbers, clients or results.
@@ -88,10 +88,10 @@ export type CaseStudy = AiSystem & CaseExtra;
 
 const MOCK = true; // mocks shown live on Relja's request (Oct 22, 2026)
 
-export const caseOrder = [...(MOCK ? ["pero", "dispatch", "bastion"] : []), "launchpilot", "deeplead", "supportagent", "voicevault", "paycontrol"];
+export const caseOrder = [...(MOCK ? ["atelier", "dispatch", "bastion"] : []), "launchpilot", "deeplead", "supportagent", "voicevault", "paycontrol"];
 
 export function getCase(slug: string): CaseStudy | undefined {
-  if (MOCK && slug === "pero") return PERO_MOCK;
+  if (MOCK && slug === "atelier") return ATELIER_MOCK;
   if (MOCK && slug === "dispatch") return DISPATCH_MOCK;
   if (MOCK && slug === "bastion") return BASTION_MOCK;
   const base = flagshipSystems.find((s) => s.slug === slug);

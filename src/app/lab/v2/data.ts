@@ -90,10 +90,10 @@ const MOCK_DISPATCH: AiCase[] =
   true // mocks shown live on Relja's request (Oct 22, 2026)
     ? [
         {
-          slug: "pero",
-          name: "Pero",
-          category: "My AI engineering team",
-          headline: "I don't work alone. I built Pero, the system that runs my team of AI agents, so you get a team's output with one senior engineer in charge.",
+          slug: "atelier",
+          name: "Atelier",
+          category: "Agent development environment",
+          headline: "I don't work alone. I built Atelier, the system that runs my team of AI agents, so you get a team's output with one senior engineer in charge.",
           summary: "",
           does: [
             "Turns a signed project into a detailed plan, every task with a priority, an effort and a test",
@@ -102,7 +102,7 @@ const MOCK_DISPATCH: AiCase[] =
           ],
           gives: "A team's speed with one senior engineer's standards, around the clock.",
           accent: "#cbb48a",
-          href: "/lab/v2/systems/pero",
+          href: "/lab/v2/systems/atelier",
         },
         {
           slug: "dispatch",
