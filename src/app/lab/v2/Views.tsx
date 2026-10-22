@@ -36,7 +36,7 @@ export function AiView() {
           <MaskLine>My work.</MaskLine>
         </h1>
         <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[var(--night-muted)]">
-          {({ 5: "Five", 6: "Six", 7: "Seven" } as Record<number, string>)[aiCases.length] ?? aiCases.length} AI systems I designed and built myself, end to end. Open one to see how it works.
+          {({ 5: "Five", 6: "Six", 7: "Seven", 8: "Eight" } as Record<number, string>)[aiCases.length] ?? aiCases.length} AI systems I designed and built myself, end to end. Open one to see how it works.
         </p>
 
         <ul className="mt-20 border-t border-white/10">

@@ -8,7 +8,7 @@ import { EASE, MaskLine } from "./Hero";
 import { spotHandlers } from "./Practices";
 
 const pad = (n: number) => String(n).padStart(2, "0");
-const WORDS: Record<number, string> = { 5: "Five", 6: "Six", 7: "Seven" };
+const WORDS: Record<number, string> = { 5: "Five", 6: "Six", 7: "Seven", 8: "Eight" };
 
 /**
  * The AI systems as one stage: a list on the left that follows the scroll,
