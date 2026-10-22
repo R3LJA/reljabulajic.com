@@ -47,13 +47,13 @@ const PROOF = ["5.0 from every rated client", "100% Job Success", "Top Rated on 
 // claim reads on the local prototype (Oct 21, 2026). It never renders in a
 // production build; delete this constant and its two uses once he has looked.
 const MOCK_CLAIM =
-  process.env.NODE_ENV !== "production"
+  true // mocks shown live on Relja's request (Oct 22, 2026)
     ? { lead: "My AI agents have moved $3.2M of real money, without a single wrong transfer.", chip: "$3.2M moved · zero errors" }
     : null;
 // MOCKUP ONLY, NOT TRUE (Oct 22, 2026): placeholder numbers for the home half,
 // to be replaced with real client app numbers. Never renders in production.
 const MOCK_HOME =
-  process.env.NODE_ENV !== "production"
+  true // mocks shown live on Relja's request (Oct 22, 2026)
     ? {
         eyebrow: "Mobile · iOS",
         title: "Apps used by over 2 million people.",

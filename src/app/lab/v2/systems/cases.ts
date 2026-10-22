@@ -85,7 +85,7 @@ const EXTRA: Record<string, CaseExtra> = {
 
 export type CaseStudy = AiSystem & CaseExtra;
 
-const MOCK = process.env.NODE_ENV !== "production";
+const MOCK = true; // mocks shown live on Relja's request (Oct 22, 2026)
 
 export const caseOrder = [...(MOCK ? ["dispatch", "bastion"] : []), "launchpilot", "deeplead", "supportagent", "voicevault", "paycontrol"];
 

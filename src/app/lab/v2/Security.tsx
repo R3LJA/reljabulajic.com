@@ -6,7 +6,7 @@ import { EASE, MaskLine } from "./Hero";
 // MOCKUP ONLY, PARTLY NOT TRUE (Oct 22, 2026). AirPosture's 5,000+ users is
 // Relja's real number; every other figure here is a placeholder until he gives
 // the real ones. The whole section renders only outside production.
-const SHOW = process.env.NODE_ENV !== "production";
+const SHOW = true; // mocks shown live on Relja's request (Oct 22, 2026)
 
 const FIGURES = [
   { value: "5,000+", label: "people on AirPosture, on servers I run" },
