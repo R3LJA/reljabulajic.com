@@ -11,10 +11,14 @@ const interTight = Inter_Tight({
   weight: ["300", "400", "500", "600"],
 });
 
-export default function V2Layout({ children }: { children: React.ReactNode }) {
+export function V2Root({ children }: { children: React.ReactNode }) {
   return (
     <div id="v2-root" className={interTight.variable}>
       {children}
     </div>
   );
+}
+
+export default function V2Layout({ children }: { children: React.ReactNode }) {
+  return <V2Root>{children}</V2Root>;
 }

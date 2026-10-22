@@ -354,10 +354,10 @@ export default function CaseStudyView({
   return (
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-center justify-between px-[5vw] py-6 text-white mix-blend-difference md:px-[2.4vw]">
-        <Link href="/lab/v2" className="pointer-events-auto text-lg tracking-[-0.02em]">
+        <Link href="/" className="pointer-events-auto text-lg tracking-[-0.02em]">
           Relja Bulajić
         </Link>
-        <Link href="/lab/v2?view=ai" className="pointer-events-auto text-sm opacity-80 hover:opacity-100">
+        <Link href="/?view=ai" className="pointer-events-auto text-sm opacity-80 hover:opacity-100">
           ← All systems
         </Link>
       </header>

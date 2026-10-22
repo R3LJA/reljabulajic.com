@@ -87,7 +87,7 @@ export const PLAIN: Record<string, { label: string; line: string; does: string[]
 // dispatch platform Relja sold, until he gives the real story and numbers.
 // Never renders in production.
 const MOCK_DISPATCH: AiCase[] =
-  process.env.NODE_ENV !== "production"
+  true // mocks shown live on Relja's request (Oct 22, 2026)
     ? [
         {
           slug: "dispatch",
