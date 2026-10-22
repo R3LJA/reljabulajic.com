@@ -1,18 +1,18 @@
 import type { CaseStudy } from "./cases";
 
-// MOCKUP ONLY, NOT TRUE (Oct 22, 2026): Pero is Relja's real agent development
+// MOCKUP ONLY, NOT TRUE (Oct 22, 2026): Atelier (shown as a product name) is Relja's real agent development
 // environment (Workspace: native app, agents per project, teams with roles,
 // worktree per agent, verify hook, fuel brake, Pero session with voice). The
 // orchestrator-per-project chat, task board, Claude/Codex routing, 12 parallel
 // agents, the 24/7 local model and the phone call are the plan in
 // workspace/docs/pero-orkestrator-vizija.md, not built yet. Numbers invented.
-export const PERO_MOCK: CaseStudy = {
-  slug: "pero",
-  name: "Pero",
-  category: "My AI engineering team",
-  headline: "I don't work alone. I built Pero, the system that runs my team of AI agents, so you get a team's output with one senior engineer in charge.",
+export const ATELIER_MOCK: CaseStudy = {
+  slug: "atelier",
+  name: "Atelier",
+  category: "Agent development environment",
+  headline: "I don't work alone. I built Atelier, the system that runs my team of AI agents, so you get a team's output with one senior engineer in charge.",
   summary:
-    "Pero is the agent development environment I built for myself, a native macOS app where every client project runs. I talk to one orchestrator. It plans the work, hands it to a team of specialised agents, checks everything they ship and only interrupts me when a decision is really mine.",
+    "Atelier is the agent development environment I built for myself, a native macOS app where every client project runs. I talk to one orchestrator. It plans the work, hands it to a team of specialised agents, checks everything they ship and only interrupts me when a decision is really mine.",
   ownership:
     "Designed and built alone: the native app, the agent runtime, the project memory and the orchestrator. I use it every day on client work.",
   accent: "#cbb48a",
@@ -25,7 +25,7 @@ export const PERO_MOCK: CaseStudy = {
   architecture: [
     {
       title: "One orchestrator per project",
-      body: "I write to one chat. Pero turns it into a plan, starts the right agents, groups them by role and pauses them when something needs me.",
+      body: "I write to one chat. Atelier turns it into a plan, starts the right agents, groups them by role and pauses them when something needs me.",
     },
     {
       title: "A team with real roles",
@@ -56,12 +56,12 @@ export const PERO_MOCK: CaseStudy = {
   problem:
     "One engineer can only type so fast. The usual answer is a bigger team, which brings meetings, handoffs and mistakes nobody owns. What clients actually want is both: the speed of a team and the care of one senior person who answers for every line.",
   steps: [
-    "A client signs. I tell Pero everything in one chat: what we agreed, deadlines, constraints. Pero writes the brief and asks about anything missing.",
-    "Pero writes a detailed plan: phases, tasks, acceptance criteria and a test after every feature, each with priority and effort. I approve it before any code is written.",
-    "Pero starts a named team: backend, frontend, Mirko on security and three testers. Each agent works in its own copy of the code, so nobody steps on anyone.",
+    "A client signs. I tell Atelier everything in one chat: what we agreed, deadlines, constraints. Atelier writes the brief and asks about anything missing.",
+    "Atelier writes a detailed plan: phases, tasks, acceptance criteria and a test after every feature, each with priority and effort. I approve it before any code is written.",
+    "Atelier starts a named team: backend, frontend, Mirko on security and three testers. Each agent works in its own copy of the code, so nobody steps on anyone.",
     "Every feature is tested by an agent that never saw the code, on the real app. No proof, no done, and failures go straight back with the evidence.",
     "Each task goes to the model that fits it, with live cost tracking and a hard brake before the budget runs out.",
-    "At 3 a.m. a payment webhook fails. Pero's local model fixes it, re-runs the tests and logs it. If it can't, my phone rings.",
+    "At 3 a.m. a payment webhook fails. Atelier's local model fixes it, re-runs the tests and logs it. If it can't, my phone rings.",
   ],
-  film: "pero",
+  film: "atelier",
 };

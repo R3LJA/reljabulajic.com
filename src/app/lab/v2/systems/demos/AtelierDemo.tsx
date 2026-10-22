@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { BAD, Bar, Card, Check, EASE, GOLD, Label, Live, Mono, OK, Pill, Scene, Stagger, Typed, type DemoProps } from "./kit";
 
-// MOCKUP ONLY: invented project, plan, team, costs and incident for the Pero case study.
+// MOCKUP ONLY: invented project, plan, team, costs and incident for the Atelier case study.
 
 const PRIORITY: Record<string, string> = { Urgent: BAD, High: GOLD, Medium: "#8FB8E8", Low: "#ffffff66" };
 
@@ -16,7 +16,7 @@ const PLAN = [
 ];
 
 const TEAM = [
-  { n: "Pero", r: "Orchestrator", b: "main", v: 1, c: GOLD },
+  { n: "Lead", r: "Orchestrator", b: "main", v: 1, c: GOLD },
   { n: "Ana", r: "Backend", b: "pay-1-models", v: 0.72, c: OK },
   { n: "Luka", r: "Backend", b: "pay-2-webhooks", v: 0.48, c: OK },
   { n: "Sara", r: "Frontend", b: "pay-4-invoices", v: 0.6, c: OK },
@@ -33,12 +33,12 @@ const ROUTES = [
   { t: "Rename, lint fixes", m: "Fast model", e: "low" },
 ];
 
-export default function PeroDemo({ step }: DemoProps) {
+export default function AtelierDemo({ step }: DemoProps) {
   return (
     <Scene step={step}>
       {step === 0 && (
         <div className="flex h-full flex-col gap-3">
-          <Label>Relja · Pero · one chat</Label>
+          <Label>Relja · Atelier · one chat</Label>
           <motion.div
             className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-white/[0.09] px-4 py-3 text-[13px] leading-relaxed text-white/85"
             initial={{ opacity: 0, y: 10 }}
@@ -51,7 +51,7 @@ export default function PeroDemo({ step }: DemoProps) {
             <Card glow={GOLD} className="max-w-[90%]">
               <div className="flex items-center gap-2">
                 <Live color={GOLD} />
-                <Mono className="text-white/60">Pero</Mono>
+                <Mono className="text-white/60">Orchestrator</Mono>
               </div>
               <p className="mt-2 text-[13px] text-white/85">Brief written. Two questions before I plan:</p>
               <Stagger gap={0.25} delay={2.1} className="mt-2 space-y-1">
@@ -212,7 +212,7 @@ export default function PeroDemo({ step }: DemoProps) {
                 <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
               </svg>
             </motion.div>
-            <p className="text-center text-[13px] text-white/85">Pero is calling Relja</p>
+            <p className="text-center text-[13px] text-white/85">Atelier is calling Relja</p>
             <Mono className="text-center text-white/45">payouts paused · needs a decision</Mono>
           </motion.div>
         </div>

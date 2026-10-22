@@ -15,7 +15,7 @@ import DeepLeadDemo from "../demos/DeepLeadDemo";
 import DispatchDemo from "../demos/DispatchDemo";
 import LaunchPilotDemo from "../demos/LaunchPilotDemo";
 import PayControlDemo from "../demos/PayControlDemo";
-import PeroDemo from "../demos/PeroDemo";
+import AtelierDemo from "../demos/AtelierDemo";
 import SupportAgentDemo from "../demos/SupportAgentDemo";
 import VoiceVaultDemo from "../demos/VoiceVaultDemo";
 import { EASE, MaskLine } from "../../Hero";
@@ -80,7 +80,7 @@ function Opening({ c, index, total }: { c: CaseStudy; index: number; total: numb
 /* ── How it works: the pipeline, one step per scroll ──────────────────── */
 
 const DEMOS: Record<string, (p: { step: number }) => React.ReactNode> = {
-  pero: PeroDemo,
+  atelier: AtelierDemo,
   dispatch: DispatchDemo,
   bastion: BastionDemo,
   launchpilot: LaunchPilotDemo,
